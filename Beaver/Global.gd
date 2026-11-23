@@ -9,5 +9,7 @@ extends Control
 func _ready() -> void:
 	get_viewport().physics_object_picking = true
 	get_viewport().physics_object_picking_first_only = false
+
+func initialize():
 	plugSlots = get_tree().get_nodes_in_group("Slots")
 	plugs = get_tree().get_nodes_in_group("Plug")

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cv361fw2exk2w"]
 
+[ext_resource type="Script" uid="uid://blo52ui7ck4ic" path="res://Combine/GameSetup.gd" id="1_vnjsm"]
 [ext_resource type="Script" uid="uid://bt4a18t8ow547" path="res://Grid/BackgroundController.gd" id="1_wcbfl"]
 [ext_resource type="Script" uid="uid://bgs4b1xeg2vmw" path="res://Utilities/ShakeEffect.gd" id="2_6hbfs"]
 [ext_resource type="Script" uid="uid://xyu5bje8nvjg" path="res://Beaver/plugNode.gd" id="2_7byba"]
@@ -82,6 +83,7 @@ spacing = 1.72
 metadata/_custom_type_script = "uid://bgs4b1xeg2vmw"
 
 [node name="CombinedPlay" type="Node2D" unique_id=690447010]
+script = ExtResource("1_vnjsm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1885081505]
 

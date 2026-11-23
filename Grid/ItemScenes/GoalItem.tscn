@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://de24of5cnxayx"]
+
+[ext_resource type="Texture2D" uid="uid://d27av3tgkbja6" path="res://ItemSprites/goal.png" id="1_4pt1d"]
+
+[node name="GoalItem" type="Node2D" unique_id=2452818]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1644264960]
+texture = ExtResource("1_4pt1d")

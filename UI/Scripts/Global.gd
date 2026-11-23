@@ -9,5 +9,5 @@ extends Node2D
 func _ready() -> void:
 	get_viewport().physics_object_picking_first_only = true
 	plugSlots = get_tree().get_nodes_in_group("Slots")
-	plugs = get_tree().get_nodes_in_group("Plug")
+	#plugs = get_tree().get_nodes_in_group("Plug")
 	pass

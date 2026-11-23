@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://btg1qbamaur0p"]
+
+[ext_resource type="Texture2D" uid="uid://bl7mip0j5lpbu" path="res://ItemSprites/door.png" id="1_cw2su"]
+
+[node name="DoorItem" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_cw2su")

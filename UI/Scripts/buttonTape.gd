@@ -85,6 +85,10 @@ func moveTapeRight() -> void:
 
 func _on_pressed() -> void:
 	#print("Looking for Node %d and state %d" % [ Global.curNode,tape[tapePos] ] )
+	#print(Global.plugs)
+	#print(get_tree().get_nodes_in_group("Plug"))
+	#print(get_tree().get_nodes_in_group("Slots"))
+	Global.plugs = get_tree().get_nodes_in_group("Plug")
 	for p in Global.plugs:
 		var nodeCheck = p.linkNode == Global.curNode
 		var stateCheck = p.state == tape[tapePos]

@@ -1,0 +1,59 @@
+
+extends Node
+class_name UndoController
+
+@export var board_controller: Node
+@export var player: Node
+
+var snapshots: Array = []
+
+func change_board_state(state: int):
+	if state == board_controller.current_state:
+		return
+
+	save_snapshot()
+	board_controller.change_state(state)
+	player.check_walkable()
+
+func move_player(direction: Vector2i):
+	if player.is_moving or player.is_dead or "goal" in player.get_collected_items():
+		return
+
+	var target = player.grid_position + direction
+	if board_controller.get_tile_at(target) == null:
+		return
+
+	save_snapshot()
+	player.move(direction)
+
+func check_player_walkable():
+	if player.is_dead:
+		return
+
+	save_snapshot()
+	player.check_walkable()
+
+func save_snapshot():
+	var snapshot = {
+		"board_state": board_controller.get_state(),
+		"board_items": board_controller.get_items(),
+		"player_position": player.grid_position,
+		"player_dead": player.is_dead,
+		"collectables": player.get_collected_items().duplicate()
+	}
+
+	snapshots.append(snapshot)
+
+func undo():
+	if snapshots.is_empty():
+		return
+
+	if player.is_moving:
+		return
+
+	var snapshot = snapshots.pop_back()
+
+	board_controller.restore_state(snapshot.board_state, snapshot.board_items)
+	player.restore_state(snapshot.player_position, snapshot.player_dead, snapshot.collectables)
+
+	print("Undo: ", snapshots.size(), " snapshots remaining")

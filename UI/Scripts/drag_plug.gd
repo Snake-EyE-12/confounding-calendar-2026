@@ -12,6 +12,8 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	if not isLocked:
+		if isMouseIn:
+			pass
 		if Input.is_action_pressed("click") and isMouseIn and not Global.isHeld:
 			isPressed = true
 			Global.heldWire = self

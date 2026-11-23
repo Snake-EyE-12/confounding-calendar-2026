@@ -1,22 +1,22 @@
 [gd_scene load_steps=8 format=3 uid="uid://hcf1fd5fgopi"]
 
-[ext_resource type="Script" uid="uid://b5mwrael0gktk" path="res://Global.gd" id="1_86jgl"]
-[ext_resource type="Script" uid="uid://c0or52p81s25k" path="res://drag_plug.gd" id="1_af6lf"]
-[ext_resource type="Script" uid="uid://6ldt6taxkjbr" path="res://draw_line.gd" id="1_p666j"]
-[ext_resource type="Script" uid="uid://4vmgqajfk4me" path="res://buttonTape.gd" id="2_hd0qv"]
-[ext_resource type="Script" uid="uid://xyu5bje8nvjg" path="res://plugNode.gd" id="2_mqlvv"]
-[ext_resource type="Script" uid="uid://baghx372u3g6w" path="res://NodeLight.gd" id="6_bfufk"]
+[ext_resource type="Script" uid="uid://b5mwrael0gktk" path="res://UI/Scripts/Global.gd" id="1_a24vn"]
+[ext_resource type="Script" uid="uid://xyu5bje8nvjg" path="res://UI/Scripts/plugNode.gd" id="2_xn22i"]
+[ext_resource type="Script" uid="uid://4vmgqajfk4me" path="res://UI/Scripts/buttonTape.gd" id="3_kr1qh"]
+[ext_resource type="Script" uid="uid://6ldt6taxkjbr" path="res://UI/Scripts/draw_line.gd" id="4_57g3i"]
+[ext_resource type="Script" uid="uid://c0or52p81s25k" path="res://UI/Scripts/drag_plug.gd" id="5_pl5c8"]
+[ext_resource type="Script" uid="uid://baghx372u3g6w" path="res://UI/Scripts/NodeLight.gd" id="6_v64h1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af6lf"]
 size = Vector2(15.8125, 4.5)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_86jgl")
+script = ExtResource("1_a24vn")
 
 [node name="BG" type="ColorRect" parent="."]
 offset_left = -36.0
 offset_top = -21.0
-offset_right = 1211.0
+offset_right = 551.0
 offset_bottom = 683.0
 scale = Vector2(0.513193, 0.559999)
 mouse_filter = 2
@@ -42,7 +42,7 @@ offset_bottom = 14.9999
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node3Right" groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 3
 
@@ -56,7 +56,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node3Right" groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 3
 
@@ -70,7 +70,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node3Right" groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 3
 
@@ -92,7 +92,7 @@ offset_bottom = 14.9999
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node3Left" groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug3"]
@@ -105,7 +105,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node3Left" groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug2"]
@@ -118,7 +118,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node3Left" groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug1"]
@@ -139,7 +139,7 @@ offset_bottom = 150.715
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node2Right" groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 2
 
@@ -153,7 +153,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node2Right" groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 2
 
@@ -167,7 +167,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node2Right" groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 2
 
@@ -189,7 +189,7 @@ offset_bottom = 150.715
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node2Left" groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug3"]
@@ -202,7 +202,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node2Left" groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug2"]
@@ -215,7 +215,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node2Left" groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug1"]
@@ -236,7 +236,7 @@ offset_bottom = 291.786
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node1Right" groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 1
 
@@ -250,7 +250,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node1Right" groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 1
 
@@ -264,7 +264,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node1Right" groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 isRight = true
 nodeNum = 1
 
@@ -286,7 +286,7 @@ offset_bottom = 291.786
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node1Left" groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug3"]
@@ -299,7 +299,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node1Left" groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug2"]
@@ -312,7 +312,7 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node1Left" groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_mqlvv")
+script = ExtResource("2_xn22i")
 nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug1"]
@@ -445,7 +445,7 @@ offset_left = 167.0
 offset_top = 267.0
 offset_right = 221.0
 offset_bottom = 294.0
-script = ExtResource("2_hd0qv")
+script = ExtResource("3_kr1qh")
 
 [node name="tapeTex" type="Sprite2D" parent="Button"]
 position = Vector2(25, -10)
@@ -454,12 +454,12 @@ position = Vector2(25, -10)
 position = Vector2(-20, -15)
 
 [node name="LineStart" type="Node2D" parent="."]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="DragPlug" type="Area2D" parent="LineStart"]
 position = Vector2(192, 201)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LineStart/DragPlug"]
 shape = SubResource("RectangleShape2D_af6lf")
@@ -482,13 +482,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LineWhite" type="Node2D" parent="Plug1s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.972549, 0.898039, 0.843137, 1)
 linkNode = 1
 
 [node name="DragPlug" type="Area2D" parent="Plug1s/LineWhite"]
 position = Vector2(203, 172)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LineWhite/DragPlug"]
 z_index = 2
@@ -502,14 +502,14 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LinePink" type="Node2D" parent="Plug1s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.996078, 0.352941, 0.560784, 1)
 state = 1
 linkNode = 1
 
 [node name="DragPlug" type="Area2D" parent="Plug1s/LinePink"]
 position = Vector2(203, 161)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LinePink/DragPlug"]
 z_index = 2
@@ -523,14 +523,14 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LineRed" type="Node2D" parent="Plug1s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.54902, 0, 0.0745098, 1)
 state = 2
 linkNode = 1
 
 [node name="DragPlug" type="Area2D" parent="Plug1s/LineRed"]
 position = Vector2(203, 150)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LineRed/DragPlug"]
 z_index = 2
@@ -550,13 +550,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LineWhite" type="Node2D" parent="Plug2s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.972549, 0.898039, 0.843137, 1)
 linkNode = 2
 
 [node name="DragPlug" type="Area2D" parent="Plug2s/LineWhite"]
 position = Vector2(204, 114)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LineWhite/DragPlug"]
 z_index = 2
@@ -570,14 +570,14 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LinePink" type="Node2D" parent="Plug2s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.996078, 0.352941, 0.560784, 1)
 state = 1
 linkNode = 2
 
 [node name="DragPlug" type="Area2D" parent="Plug2s/LinePink"]
 position = Vector2(204, 103)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LinePink/DragPlug"]
 z_index = 2
@@ -591,14 +591,14 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LineRed" type="Node2D" parent="Plug2s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.54902, 0, 0.0745098, 1)
 state = 2
 linkNode = 2
 
 [node name="DragPlug" type="Area2D" parent="Plug2s/LineRed"]
 position = Vector2(204, 92)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LineRed/DragPlug"]
 z_index = 2
@@ -618,13 +618,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LineWhite" type="Node2D" parent="Plug3s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.972549, 0.898039, 0.843137, 1)
 linkNode = 3
 
 [node name="DragPlug" type="Area2D" parent="Plug3s/LineWhite"]
 position = Vector2(204, 58)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LineWhite/DragPlug"]
 z_index = 2
@@ -638,14 +638,14 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LinePink" type="Node2D" parent="Plug3s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.996078, 0.352941, 0.560784, 1)
 state = 1
 linkNode = 3
 
 [node name="DragPlug" type="Area2D" parent="Plug3s/LinePink"]
 position = Vector2(204, 47)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LinePink/DragPlug"]
 z_index = 2
@@ -659,14 +659,14 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LineRed" type="Node2D" parent="Plug3s" groups=["Plug"]]
-script = ExtResource("1_p666j")
+script = ExtResource("4_57g3i")
 color = Color(0.54902, 0, 0.0745098, 1)
 state = 2
 linkNode = 3
 
 [node name="DragPlug" type="Area2D" parent="Plug3s/LineRed"]
 position = Vector2(204, 36)
-script = ExtResource("1_af6lf")
+script = ExtResource("5_pl5c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LineRed/DragPlug"]
 z_index = 2
@@ -686,7 +686,7 @@ offset_left = 60.0
 offset_top = 217.0
 offset_right = 71.0
 offset_bottom = 228.0
-script = ExtResource("6_bfufk")
+script = ExtResource("6_v64h1")
 thisNode = 1
 
 [node name="NodeLight2" type="ColorRect" parent="Lights"]
@@ -694,7 +694,7 @@ offset_left = 60.0
 offset_top = 138.0
 offset_right = 71.0
 offset_bottom = 149.0
-script = ExtResource("6_bfufk")
+script = ExtResource("6_v64h1")
 thisNode = 2
 
 [node name="NodeLight3" type="ColorRect" parent="Lights"]
@@ -702,7 +702,7 @@ offset_left = 60.0
 offset_top = 62.0
 offset_right = 71.0
 offset_bottom = 73.0
-script = ExtResource("6_bfufk")
+script = ExtResource("6_v64h1")
 thisNode = 3
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

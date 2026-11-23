@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dito5ifkk8v61"]
+
+[ext_resource type="Texture2D" uid="uid://fnsv1u0t062j" path="res://ItemSprites/key.png" id="1_5if8a"]
+
+[node name="KeyItem" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_5if8a")

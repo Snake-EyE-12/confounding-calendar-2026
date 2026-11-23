@@ -10,14 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Turing Machine UI"
-run/main_scene="uid://hcf1fd5fgopi"
+config/name="ConfoundingCalendar2026"
+run/main_scene="uid://chsxwlljpmo6p"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://UI/Scripts/Global.gd"
 
 [display]
 

@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 var isMouseIn := false
 var isPressed := false
@@ -7,8 +7,9 @@ var conRight : bool
 var isLocked = false
 
 func _ready() -> void:
-	get_viewport().physics_object_picking_first_only = true
-	pass
+	get_viewport().physics_object_picking_first_only = false
+	mouse_entered.connect(func(): print("MOUSE ENTERED"))
+	mouse_exited.connect(func(): print("MOUSE EXITED"))
 	
 func _physics_process(delta: float) -> void:
 	if not isLocked:
@@ -46,11 +47,14 @@ func checkPlug() -> void:
 			lockPlug(s)
 
 func _on_mouse_entered() -> void:
+	print("ENTER")
 	isMouseIn = true
 
 func _on_mouse_exited() -> void:
+	print("EXIT")
 	if !isPressed:
 		isMouseIn = false
+
 
 func _unhandled_input(event):
 	if event.is_action("click"):

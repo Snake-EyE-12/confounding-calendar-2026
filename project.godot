@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Turing Machine UI"
-run/main_scene="uid://chsxwlljpmo6p"
+run/main_scene="uid://cv361fw2exk2w"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Beaver/icon.svg"
 
@@ -25,9 +25,6 @@ Global="*res://Beaver/Global.gd"
 
 [display]
 
-window/size/viewport_width=576
-window/size/viewport_height=324
-window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
@@ -48,4 +45,5 @@ click={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.9607843, 0.9843137, 1, 1)
 2d/snap/snap_2d_transforms_to_pixel=true

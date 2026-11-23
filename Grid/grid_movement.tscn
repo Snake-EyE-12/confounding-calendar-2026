@@ -106,8 +106,6 @@ tile_colors = Array[ExtResource("3_x65sb")]([SubResource("Resource_2pjv3"), SubR
 tile_scene = ExtResource("2_2pjv3")
 preset_items = Array[ExtResource("5_a2yhn")]([SubResource("Resource_ion7q"), SubResource("Resource_kkeeh"), SubResource("Resource_hwwm8")])
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1487329569]
-
 [node name="Player" parent="." unique_id=791023873 node_paths=PackedStringArray("board_controller", "win_text") instance=ExtResource("6_x65sb")]
 scale = Vector2(0.7199985, 0.7199985)
 board_controller = NodePath("../BoardController")

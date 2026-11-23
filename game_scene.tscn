@@ -2,9 +2,83 @@
 
 [ext_resource type="PackedScene" uid="uid://c1bib6h4m7or1" path="res://Grid/grid_movement.tscn" id="1_mlf6e"]
 [ext_resource type="PackedScene" uid="uid://mien332kwovt" path="res://Beaver/TestUI.tscn" id="1_po0ka"]
+[ext_resource type="Script" uid="uid://bgs4b1xeg2vmw" path="res://Utilities/ShakeEffect.gd" id="3_mixcd"]
+[ext_resource type="Script" uid="uid://dtwnnlgx2k6ly" path="res://Utilities/WinText.gd" id="4_mj2jn"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_cr84u"]
+script = ExtResource("3_mixcd")
+bounce_height = 4.9350000000000005
+horizontal_sway = 1.9100000000000001
+speed = 1.815
+spacing = 1.72
+metadata/_custom_type_script = "uid://bgs4b1xeg2vmw"
 
 [node name="GameScene" type="Node2D" unique_id=1411621550]
 
 [node name="NodePanel" parent="." unique_id=829709472 instance=ExtResource("1_po0ka")]
+offset_left = -281.0
+offset_top = -159.0
+offset_right = -281.0
+offset_bottom = -159.0
 
 [node name="GridMovement" parent="." unique_id=1914188075 instance=ExtResource("1_mlf6e")]
+visible = false
+position = Vector2(778, 75)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1959171345]
+
+[node name="Canvas2" type="Control" parent="." unique_id=577452306]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UI" type="Control" parent="Canvas2" unique_id=1347132346]
+anchors_preset = 0
+offset_left = -578.0
+offset_top = -325.0
+offset_right = 578.0
+offset_bottom = 326.0
+mouse_filter = 2
+
+[node name="ForegroundController" type="Control" parent="Canvas2/UI" unique_id=2067520435]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 3.0
+offset_right = 15.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Canvas2/UI/ForegroundController" unique_id=1489103918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -666.0
+offset_right = -5.0
+offset_bottom = -674.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(538.015, 0)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.99215686, 0.05490196, 0.27058825, 1)
+theme_override_colors/font_outline_color = Color(0.039215688, 0.039215688, 0.08627451, 1)
+theme_override_constants/outline_size = 59
+theme_override_font_sizes/normal_font_size = 228
+bbcode_enabled = true
+text = "[celebrate]You Win![/celebrate]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+custom_effects = [SubResource("RichTextEffect_cr84u")]
+script = ExtResource("4_mj2jn")

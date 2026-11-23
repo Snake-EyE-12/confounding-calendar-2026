@@ -5,6 +5,7 @@ extends Node2D
 @export var tile_scene: PackedScene
 @export var tile_size: float = 64.0
 @export var preset_items: Array[PresetItem]
+@export var grid_origin: Vector2 = Vector2.ZERO
 
 var current_state: int = 1
 var tiles: Array = []
@@ -53,7 +54,7 @@ func build_board():
 			var tile = tile_scene.instantiate()
 			tile.tile_type = type
 			tile.tile_colors = tile_colors
-			tile.position = Vector2(x, y) * tile_size - offset
+			tile.position = Vector2(x, y) * tile_size - offset + grid_origin
 			tile.tile_size = tile_size * 0.9
 			add_child(tile)
 			tiles.append(tile)
@@ -112,8 +113,8 @@ func grid_to_world(grid_position: Vector2i) -> Vector2:
 	var rows = board_layout.size()
 	var columns = board_layout[0].size()
 	var offset = Vector2(columns - 1, rows - 1) * tile_size / 2
-
-	return Vector2(grid_position) * tile_size - offset
+	
+	return Vector2(grid_position) * tile_size - offset + grid_origin
 
 func change_state(new_state: int, instant: bool = false):
 	current_state = new_state

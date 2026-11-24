@@ -11,7 +11,7 @@ func change_board_state(state: int):
 	if state == board_controller.current_state:
 		return
 
-	save_snapshot()
+	#save_snapshot()
 	board_controller.change_state(state)
 	player.check_walkable()
 

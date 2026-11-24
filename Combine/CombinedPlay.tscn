@@ -35,10 +35,10 @@ background = Color(0.039215688, 0.039215688, 0.08627451, 1)
 foreground = Color(0.15294118, 0.16078432, 0.21960784, 1)
 metadata/_custom_type_script = "uid://niithktukvrs"
 
-[sub_resource type="Resource" id="Resource_6dpd2"]
+[sub_resource type="Resource" id="Resource_ls3q4"]
 script = ExtResource("11_gkgex")
-background = Color(0.9607843, 0.9843137, 1, 1)
-foreground = Color(0.54901963, 0, 0.07450981, 1)
+background = Color(0.039215688, 0.039215688, 0.08627451, 1)
+foreground = Color(0.972549, 0.8980392, 0.84313726, 1)
 metadata/_custom_type_script = "uid://niithktukvrs"
 
 [sub_resource type="Resource" id="Resource_x65sb"]
@@ -47,10 +47,10 @@ background = Color(0.9607843, 0.9843137, 1, 1)
 foreground = Color(0.99607843, 0.3529412, 0.56078434, 1)
 metadata/_custom_type_script = "uid://niithktukvrs"
 
-[sub_resource type="Resource" id="Resource_ls3q4"]
+[sub_resource type="Resource" id="Resource_6dpd2"]
 script = ExtResource("11_gkgex")
-background = Color(0.039215688, 0.039215688, 0.08627451, 1)
-foreground = Color(0.972549, 0.8980392, 0.84313726, 1)
+background = Color(0.9607843, 0.9843137, 1, 1)
+foreground = Color(0.54901963, 0, 0.07450981, 1)
 metadata/_custom_type_script = "uid://niithktukvrs"
 
 [sub_resource type="Resource" id="Resource_ion7q"]
@@ -949,6 +949,7 @@ position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.99607843, 0.3529412, 0.56078434, 1)
+state = 1
 linkNode = 1
 dragPlug = NodePath("DragPlug")
 collisionShape = NodePath("DragPlug/CollisionShape2D")
@@ -991,6 +992,7 @@ position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.54901963, 0, 0.07450981, 1)
+state = 2
 linkNode = 1
 dragPlug = NodePath("DragPlug")
 collisionShape = NodePath("DragPlug/CollisionShape2D")
@@ -1149,6 +1151,7 @@ position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.99607843, 0.3529412, 0.56078434, 1)
+state = 1
 linkNode = 2
 dragPlug = NodePath("DragPlug")
 collisionShape = NodePath("DragPlug/CollisionShape2D")
@@ -1191,6 +1194,7 @@ position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.54901963, 0, 0.07450981, 1)
+state = 2
 linkNode = 2
 dragPlug = NodePath("DragPlug")
 collisionShape = NodePath("DragPlug/CollisionShape2D")
@@ -1348,6 +1352,7 @@ position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.99607843, 0.3529412, 0.56078434, 1)
+state = 1
 linkNode = 3
 dragPlug = NodePath("DragPlug")
 collisionShape = NodePath("DragPlug/CollisionShape2D")
@@ -1390,6 +1395,7 @@ position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.54901963, 0, 0.07450981, 1)
+state = 2
 linkNode = 3
 dragPlug = NodePath("DragPlug")
 collisionShape = NodePath("DragPlug/CollisionShape2D")
@@ -1550,7 +1556,7 @@ position = Vector2(-20, -15)
 [node name="BoardController" type="Node2D" parent="Game" unique_id=550859322 node_paths=PackedStringArray("background_controller")]
 script = ExtResource("10_n17h6")
 background_controller = NodePath("../../Canvas/UI/BackgroundController")
-tile_colors = Array[ExtResource("11_gkgex")]([SubResource("Resource_2pjv3"), SubResource("Resource_6dpd2"), SubResource("Resource_x65sb"), SubResource("Resource_ls3q4")])
+tile_colors = Array[ExtResource("11_gkgex")]([SubResource("Resource_2pjv3"), SubResource("Resource_ls3q4"), SubResource("Resource_x65sb"), SubResource("Resource_6dpd2")])
 tile_scene = ExtResource("12_vnjsm")
 tile_size = 100.0
 preset_items = Array[ExtResource("13_tcpmg")]([SubResource("Resource_ion7q"), SubResource("Resource_kkeeh"), SubResource("Resource_hwwm8")])

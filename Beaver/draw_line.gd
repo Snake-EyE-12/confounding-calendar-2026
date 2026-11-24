@@ -15,6 +15,8 @@ var plugStartPos: Vector2
 var dragStartPos: Vector2
 
 func _ready() -> void:
+	line.width = 5.0
+	
 	plugStartPos = collisionShape.global_position
 	dragStartPos = dragPlug.position
 
@@ -39,7 +41,7 @@ func makeHangLine() -> void:
 	var curve := Curve2D.new()
 
 	var start = line.to_local(plugStartPos)
-	var end = line.to_local(collisionShape.global_position - Vector2(5, 0))
+	var end = line.to_local(collisionShape.global_position - Vector2(1, 0))
 
 	var xAdj: float = abs(end.x - start.x)
 	var yAdj := .5 * xAdj

@@ -24,4 +24,5 @@ func _input(event):
 			var result = taper.advance()
 			if result == -1:
 				print("WRONG")
-			undo_controller.change_board_state(result)
+			else:
+				undo_controller.change_board_state(result + 1)

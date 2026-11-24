@@ -42,15 +42,8 @@ func _draw() -> void:
 	var tapeHeight = innerHeight * TAPE_HEIGHT_RATIO
 	var tapeY = BORDER_WIDTH + innerHeight * TAPE_Y_RATIO
 
-	# Outer display border
-	draw_rect(
-		Rect2(Vector2.ZERO, size),
-		TAPE_BORDER_COLOR,
-		false,
-		BORDER_WIDTH
-	)
+	draw_rect(Rect2(Vector2.ZERO, size), TAPE_BORDER_COLOR, false, BORDER_WIDTH)
 
-	# Tape cells
 	for i in range(tLength):
 		var rect = Rect2(
 			BORDER_WIDTH + i * cellWidth,
@@ -58,19 +51,12 @@ func _draw() -> void:
 			cellWidth,
 			tapeHeight
 		)
-
 		draw_rect(rect, GetStateColor(tape[i]))
 
-	# Cell dividers
 	for i in range(1, tLength):
 		var x = BORDER_WIDTH + i * cellWidth - DIVIDER_WIDTH / 2
+		draw_rect(Rect2(x, tapeY, DIVIDER_WIDTH, tapeHeight), TAPE_BORDER_COLOR)
 
-		draw_rect(
-			Rect2(x, tapeY, DIVIDER_WIDTH, tapeHeight),
-			TAPE_BORDER_COLOR
-		)
-
-	# Tape border
 	draw_rect(
 		Rect2(BORDER_WIDTH, tapeY, innerWidth, tapeHeight),
 		TAPE_BORDER_COLOR,
@@ -78,7 +64,6 @@ func _draw() -> void:
 		BORDER_WIDTH
 	)
 
-	# Arrow
 	var arrowWidth = cellWidth * ARROW_WIDTH_RATIO
 	var arrowHeight = innerHeight * ARROW_HEIGHT_RATIO
 	var arrowCenter = BORDER_WIDTH + (tapePos + 0.5) * cellWidth
@@ -104,27 +89,35 @@ func GetStateColor(state) -> Color:
 	return Color("#f8e5d7")
 
 func moveTapeLeft() -> void:
-	tape[tapePos] = (tape[tapePos] + 1) % 3
 
 	tapePos -= 1
 	if tapePos < 0:
 		tapePos = tLength - 1
 
+	tape[tapePos] = (tape[tapePos] + 1) % 3
+	
 	queue_redraw()
 
 func moveTapeRight() -> void:
-	tape[tapePos] = (tape[tapePos] + 1) % 3
 
 	tapePos += 1
 	if tapePos >= tLength:
 		tapePos = 0
 
+	tape[tapePos] = (tape[tapePos] + 1) % 3
+	
 	queue_redraw()
-
 func advance() -> int:
+	Global.plugs = get_tree().get_nodes_in_group("Plug")
+
 	for p in Global.plugs:
-		if p.linkNode != Global.curNode or p.state != tape[tapePos]:
+
+		if p.linkNode != Global.curNode:
 			continue
+
+		if p.state != tape[tapePos]:
+			continue
+
 
 		var dragPlug = p.get_node("DragPlug")
 
@@ -137,6 +130,7 @@ func advance() -> int:
 			moveTapeRight()
 		else:
 			moveTapeLeft()
+
 
 		return tape[tapePos]
 

@@ -42,7 +42,7 @@ func checkPlug() -> void:
 		var shiftPos = s.global_position + Vector2(7, 0)
 		var dis = global_position.distance_squared_to(shiftPos)
 
-		if dis < 15:
+		if dis < 300:
 			lockPlug(s)
 			return
 

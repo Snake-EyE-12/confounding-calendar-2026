@@ -6,11 +6,12 @@ extends Control
 
 @export var current_background: ColorRect
 @export var transition_background: ColorRect
-# working
 
 var current_tween: Tween
 
 func _ready():
+	current_background.color = Color("#f8e5d7")
+
 	var shader = Shader.new()
 	shader.code = """
 shader_type canvas_item;
@@ -27,13 +28,14 @@ void fragment() {
 	material.shader = shader
 
 	transition_background.material = material
-	transition_background.color = Color.WHITE
 	transition_background.material.set_shader_parameter("radius", 0.0)
 	transition_background.visible = false
 
 func change_color(color: Color, instant: bool = false):
-	if current_tween:
+	if current_tween and current_tween.is_running():
 		current_tween.kill()
+		current_background.color = transition_background.color
+		transition_background.visible = false
 
 	if instant:
 		current_background.color = color

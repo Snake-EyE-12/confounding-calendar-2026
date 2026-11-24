@@ -122,19 +122,11 @@ func moveTapeRight() -> void:
 	queue_redraw()
 
 func advance() -> int:
-	print("Current Node: ", Global.curNode)
-	print("Current Tape Position: ", tapePos)
-	print("Current Tape State: ", tape[tapePos])
-	print("Available Plugs: ", Global.plugs.size())
-
 	for p in Global.plugs:
-		print("Checking Plug - Node: ", p.linkNode, " State: ", p.state)
-
 		if p.linkNode != Global.curNode or p.state != tape[tapePos]:
 			continue
 
 		var dragPlug = p.get_node("DragPlug")
-		print("MATCH FOUND - Locked: ", dragPlug.isLocked)
 
 		if not dragPlug.isLocked:
 			return -1
@@ -145,9 +137,6 @@ func advance() -> int:
 			moveTapeRight()
 		else:
 			moveTapeLeft()
-
-		print("New Node: ", Global.curNode)
-		print("New Tape State: ", tape[tapePos])
 
 		return tape[tapePos]
 

@@ -1,17 +1,9 @@
 [gd_scene format=3 uid="uid://dah5sfh8f6nhx"]
 
-[ext_resource type="Script" path="res://UI/Scripts/Global.gd" id="1_vd3hk"]
-[ext_resource type="Script" path="res://UI/Scripts/plugNode.gd" id="2_5uemy"]
-[ext_resource type="Script" path="res://UI/Scripts/buttonTape.gd" id="3_gxqu4"]
-[ext_resource type="Script" path="res://UI/Scripts/draw_line.gd" id="4_yskqk"]
-[ext_resource type="Script" path="res://UI/Scripts/drag_plug.gd" id="5_vyi5e"]
-[ext_resource type="Script" path="res://UI/Scripts/NodeLight.gd" id="6_xpd2e"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af6lf"]
 size = Vector2(15.8125, 4.5)
 
 [node name="Node2D" type="Node2D" unique_id=292589642]
-script = ExtResource("1_vd3hk")
 
 [node name="BG" type="ColorRect" parent="." unique_id=1667164325]
 offset_left = -36.0
@@ -41,9 +33,6 @@ offset_bottom = 14.9999
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node3Right" unique_id=17173614 groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Right/Plug3" unique_id=415569177]
 offset_left = -3.0
@@ -55,9 +44,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node3Right" unique_id=281333287 groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Right/Plug2" unique_id=659016959]
 offset_left = -3.0
@@ -69,9 +55,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node3Right" unique_id=670224613 groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Right/Plug1" unique_id=360809257]
 offset_left = -3.0
@@ -90,8 +73,6 @@ offset_bottom = 14.9999
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node3Left" unique_id=185381809 groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug3" unique_id=382964169]
 offset_left = -3.0
@@ -103,8 +84,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node3Left" unique_id=1783710103 groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug2" unique_id=845438085]
 offset_left = -3.0
@@ -116,8 +95,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node3Left" unique_id=1123253885 groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 3
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug1" unique_id=578987007]
 offset_left = -3.0
@@ -136,9 +113,6 @@ offset_bottom = 150.715
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node2Right" unique_id=1260178823 groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Right/Plug3" unique_id=668518296]
 offset_left = -3.0
@@ -150,9 +124,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node2Right" unique_id=604700318 groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Right/Plug2" unique_id=714955895]
 offset_left = -3.0
@@ -164,9 +135,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node2Right" unique_id=298131676 groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Right/Plug1" unique_id=1030338078]
 offset_left = -3.0
@@ -185,8 +153,6 @@ offset_bottom = 150.715
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node2Left" unique_id=363221664 groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug3" unique_id=1904517014]
 offset_left = -3.0
@@ -198,8 +164,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node2Left" unique_id=97811675 groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug2" unique_id=1272394300]
 offset_left = -3.0
@@ -211,8 +175,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node2Left" unique_id=1505944811 groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 2
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug1" unique_id=1303704585]
 offset_left = -3.0
@@ -231,9 +193,6 @@ offset_bottom = 291.786
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node1Right" unique_id=1569277674 groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Right/Plug3" unique_id=1834226439]
 offset_left = -3.0
@@ -245,9 +204,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node1Right" unique_id=1787666139 groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Right/Plug2" unique_id=1531819905]
 offset_left = -3.0
@@ -259,9 +215,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node1Right" unique_id=2064224353 groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-isRight = true
-nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Right/Plug1" unique_id=428349803]
 offset_left = -3.0
@@ -280,8 +233,6 @@ offset_bottom = 291.786
 [node name="Plug3" type="Node2D" parent="LeftPanel/Node1Left" unique_id=1965831601 groups=["Slots"]]
 position = Vector2(179.27, 139.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug3" unique_id=312601360]
 offset_left = -3.0
@@ -293,8 +244,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug2" type="Node2D" parent="LeftPanel/Node1Left" unique_id=485103164 groups=["Slots"]]
 position = Vector2(179.27, 164.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug2" unique_id=2120969277]
 offset_left = -3.0
@@ -306,8 +255,6 @@ color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 [node name="Plug1" type="Node2D" parent="LeftPanel/Node1Left" unique_id=1698183361 groups=["Slots"]]
 position = Vector2(179.27, 189.286)
 scale = Vector2(1.94859, 1.78572)
-script = ExtResource("2_5uemy")
-nodeNum = 1
 
 [node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug1" unique_id=1763045237]
 offset_left = -3.0
@@ -439,7 +386,6 @@ offset_left = 167.0
 offset_top = 267.0
 offset_right = 221.0
 offset_bottom = 294.0
-script = ExtResource("3_gxqu4")
 
 [node name="tapeTex" type="Sprite2D" parent="Button" unique_id=377538170]
 position = Vector2(25, -10)
@@ -448,12 +394,9 @@ position = Vector2(25, -10)
 position = Vector2(-20, -15)
 
 [node name="LineStart" type="Node2D" parent="." unique_id=615944724]
-script = ExtResource("4_yskqk")
-color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="DragPlug" type="Area2D" parent="LineStart" unique_id=1225488659]
 position = Vector2(192, 201)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LineStart/DragPlug" unique_id=269687910]
 shape = SubResource("RectangleShape2D_af6lf")
@@ -476,13 +419,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LineWhite" type="Node2D" parent="Plug1s" unique_id=291801380 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.972549, 0.898039, 0.843137, 1)
-linkNode = 1
 
 [node name="DragPlug" type="Area2D" parent="Plug1s/LineWhite" unique_id=86827699]
 position = Vector2(203, 172)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LineWhite/DragPlug" unique_id=185026804]
 z_index = 2
@@ -496,14 +435,9 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LinePink" type="Node2D" parent="Plug1s" unique_id=1336698412 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.996078, 0.352941, 0.560784, 1)
-state = 1
-linkNode = 1
 
 [node name="DragPlug" type="Area2D" parent="Plug1s/LinePink" unique_id=989591597]
 position = Vector2(203, 161)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LinePink/DragPlug" unique_id=890544884]
 z_index = 2
@@ -517,14 +451,9 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LineRed" type="Node2D" parent="Plug1s" unique_id=1611815696 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.54902, 0, 0.0745098, 1)
-state = 2
-linkNode = 1
 
 [node name="DragPlug" type="Area2D" parent="Plug1s/LineRed" unique_id=961027425]
 position = Vector2(203, 150)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LineRed/DragPlug" unique_id=322763845]
 z_index = 2
@@ -544,13 +473,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LineWhite" type="Node2D" parent="Plug2s" unique_id=805776216 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.972549, 0.898039, 0.843137, 1)
-linkNode = 2
 
 [node name="DragPlug" type="Area2D" parent="Plug2s/LineWhite" unique_id=104128466]
 position = Vector2(204, 114)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LineWhite/DragPlug" unique_id=1982017284]
 z_index = 2
@@ -564,14 +489,9 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LinePink" type="Node2D" parent="Plug2s" unique_id=890298787 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.996078, 0.352941, 0.560784, 1)
-state = 1
-linkNode = 2
 
 [node name="DragPlug" type="Area2D" parent="Plug2s/LinePink" unique_id=1342550138]
 position = Vector2(204, 103)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LinePink/DragPlug" unique_id=1137082880]
 z_index = 2
@@ -585,14 +505,9 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LineRed" type="Node2D" parent="Plug2s" unique_id=770810574 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.54902, 0, 0.0745098, 1)
-state = 2
-linkNode = 2
 
 [node name="DragPlug" type="Area2D" parent="Plug2s/LineRed" unique_id=1935298162]
 position = Vector2(204, 92)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LineRed/DragPlug" unique_id=663884300]
 z_index = 2
@@ -612,13 +527,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LineWhite" type="Node2D" parent="Plug3s" unique_id=810495936 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.972549, 0.898039, 0.843137, 1)
-linkNode = 3
 
 [node name="DragPlug" type="Area2D" parent="Plug3s/LineWhite" unique_id=37979733]
 position = Vector2(204, 58)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LineWhite/DragPlug" unique_id=1540177813]
 z_index = 2
@@ -632,14 +543,9 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LinePink" type="Node2D" parent="Plug3s" unique_id=380985745 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.996078, 0.352941, 0.560784, 1)
-state = 1
-linkNode = 3
 
 [node name="DragPlug" type="Area2D" parent="Plug3s/LinePink" unique_id=1887270572]
 position = Vector2(204, 47)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LinePink/DragPlug" unique_id=1221959813]
 z_index = 2
@@ -653,14 +559,9 @@ width = 1.0
 default_color = Color(0.960784, 0.984314, 1, 1)
 
 [node name="LineRed" type="Node2D" parent="Plug3s" unique_id=1480223908 groups=["Plug"]]
-script = ExtResource("4_yskqk")
-color = Color(0.54902, 0, 0.0745098, 1)
-state = 2
-linkNode = 3
 
 [node name="DragPlug" type="Area2D" parent="Plug3s/LineRed" unique_id=1364694804]
 position = Vector2(204, 36)
-script = ExtResource("5_vyi5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LineRed/DragPlug" unique_id=2033405656]
 z_index = 2
@@ -680,24 +581,18 @@ offset_left = 60.0
 offset_top = 217.0
 offset_right = 71.0
 offset_bottom = 228.0
-script = ExtResource("6_xpd2e")
-thisNode = 1
 
 [node name="NodeLight2" type="ColorRect" parent="Lights" unique_id=168849657]
 offset_left = 60.0
 offset_top = 138.0
 offset_right = 71.0
 offset_bottom = 149.0
-script = ExtResource("6_xpd2e")
-thisNode = 2
 
 [node name="NodeLight3" type="ColorRect" parent="Lights" unique_id=600477722]
 offset_left = 60.0
 offset_top = 62.0
 offset_right = 71.0
 offset_bottom = 73.0
-script = ExtResource("6_xpd2e")
-thisNode = 3
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="LineStart/DragPlug" to="LineStart/DragPlug" method="_on_mouse_entered"]

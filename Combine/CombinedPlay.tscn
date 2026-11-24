@@ -24,8 +24,10 @@
 [ext_resource type="Script" uid="uid://b460u8uxvoosd" path="res://Grid/UserInputController.gd" id="18_dkwgj"]
 [ext_resource type="Script" uid="uid://2xddrf1ckqtq" path="res://Grid/UndoController.gd" id="19_vkosf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5valb"]
-size = Vector2(33.12593, 30.35722)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vnjsm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tx082"]
+radius = 23.654228
 
 [sub_resource type="Resource" id="Resource_2pjv3"]
 script = ExtResource("11_gkgex")
@@ -77,7 +79,7 @@ metadata/_custom_type_script = "uid://dfp6jjlu7gw51"
 [sub_resource type="RichTextEffect" id="RichTextEffect_cr84u"]
 script = ExtResource("2_6hbfs")
 bounce_height = 4.9350000000000005
-horizontal_sway = 1.9100000000000001
+horizontal_sway = 1.91
 speed = 1.815
 spacing = 1.72
 metadata/_custom_type_script = "uid://bgs4b1xeg2vmw"
@@ -94,6 +96,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="UI" type="Control" parent="Canvas" unique_id=1031511394]
 layout_mode = 1
@@ -106,6 +109,7 @@ offset_right = 576.0
 offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BackgroundController" type="Control" parent="Canvas/UI" unique_id=989724634 node_paths=PackedStringArray("current_background", "transition_background")]
 layout_mode = 1
@@ -114,6 +118,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_wcbfl")
 animation_duration = 1.0
 current_background = NodePath("StaticBackground")
@@ -128,6 +133,7 @@ offset_top = -176.0
 offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.9607843, 0.9843137, 1, 1)
 
 [node name="TransitionBackground" type="ColorRect" parent="Canvas/UI/BackgroundController" unique_id=1716848338]
@@ -139,6 +145,7 @@ offset_top = -173.0
 offset_bottom = 173.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.9607843, 0.9843137, 1, 1)
 
 [node name="Panels" type="Control" parent="Canvas/UI" unique_id=2115780488]
@@ -201,6 +208,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Plug3" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA/Node3Right" unique_id=234847703 groups=["Slots"]]
 position = Vector2(118.84303, 34.444176)
@@ -214,6 +222,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug2" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA/Node3Right" unique_id=874357689 groups=["Slots"]]
@@ -228,6 +237,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug1" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA/Node3Right" unique_id=564438159 groups=["Slots"]]
@@ -242,6 +252,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Node3Left" type="Control" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA" unique_id=1148884856]
@@ -251,6 +262,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Plug3" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA/Node3Left" unique_id=305784433 groups=["Slots"]]
 position = Vector2(21.434443, 33.928635)
@@ -263,6 +275,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug2" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA/Node3Left" unique_id=940303272 groups=["Slots"]]
@@ -276,6 +289,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug1" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA/Node3Left" unique_id=1314700784 groups=["Slots"]]
@@ -289,6 +303,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="NodeLightBG" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA" unique_id=1043240658]
@@ -302,6 +317,7 @@ offset_right = -42.868866
 offset_bottom = -8.928604
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.039215688, 0.039215688, 0.08627451, 1)
 
 [node name="NodeLight2" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeA/NodeLightBG" unique_id=1459043963]
@@ -315,6 +331,7 @@ offset_right = -5.845764
 offset_bottom = -5.357147
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.9607843, 0.9843137, 1, 1)
 script = ExtResource("3_bt401")
 thisNode = 1
@@ -354,6 +371,7 @@ offset_bottom = -31.578598
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("3_k6j8k")
 expand_mode = 1
 
@@ -369,6 +387,7 @@ offset_bottom = 0.5643158
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.5707964
+mouse_filter = 2
 texture = ExtResource("3_k6j8k")
 expand_mode = 1
 
@@ -393,6 +412,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Plug3" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB/Node3Right" unique_id=405159105 groups=["Slots"]]
 position = Vector2(118.86365, 33.928635)
@@ -406,6 +426,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug2" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB/Node3Right" unique_id=465305375 groups=["Slots"]]
@@ -420,6 +441,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug1" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB/Node3Right" unique_id=2026129552 groups=["Slots"]]
@@ -434,6 +456,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Node3Left" type="Control" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB" unique_id=1176178912]
@@ -443,6 +466,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Plug3" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB/Node3Left" unique_id=568754800 groups=["Slots"]]
 position = Vector2(21.434443, 33.928635)
@@ -455,6 +479,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug2" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB/Node3Left" unique_id=946403005 groups=["Slots"]]
@@ -468,6 +493,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug1" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB/Node3Left" unique_id=820659944 groups=["Slots"]]
@@ -481,6 +507,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="NodeLightBG" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB" unique_id=349491413]
@@ -494,6 +521,7 @@ offset_right = -42.868866
 offset_bottom = -8.928604
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.039215688, 0.039215688, 0.08627451, 1)
 
 [node name="NodeLight2" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeB/NodeLightBG" unique_id=1063538236]
@@ -507,6 +535,7 @@ offset_right = -5.845764
 offset_bottom = -5.357147
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.9607843, 0.9843137, 1, 1)
 script = ExtResource("3_bt401")
 thisNode = 2
@@ -546,6 +575,7 @@ offset_bottom = -31.578598
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("3_k6j8k")
 expand_mode = 1
 
@@ -561,6 +591,7 @@ offset_bottom = 0.5643158
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.5707964
+mouse_filter = 2
 texture = ExtResource("3_k6j8k")
 expand_mode = 1
 
@@ -585,6 +616,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Plug3" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC/Node3Right" unique_id=1637892143 groups=["Slots"]]
 position = Vector2(118.86365, 33.928635)
@@ -598,6 +630,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug2" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC/Node3Right" unique_id=125116671 groups=["Slots"]]
@@ -612,6 +645,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug1" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC/Node3Right" unique_id=622634071 groups=["Slots"]]
@@ -626,6 +660,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Node3Left" type="Control" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC" unique_id=268147290]
@@ -635,6 +670,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Plug3" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC/Node3Left" unique_id=276403223 groups=["Slots"]]
 position = Vector2(21.434443, 33.928635)
@@ -647,6 +683,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug2" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC/Node3Left" unique_id=1273521297 groups=["Slots"]]
@@ -660,6 +697,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="Plug1" type="Node2D" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC/Node3Left" unique_id=452583571 groups=["Slots"]]
@@ -673,6 +711,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 4.0
 offset_bottom = 4.0
+mouse_filter = 2
 color = Color(0.0392157, 0.0392157, 0.0862745, 1)
 
 [node name="NodeLightBG" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC" unique_id=1216825256]
@@ -686,6 +725,7 @@ offset_right = -42.868866
 offset_bottom = -8.928604
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.039215688, 0.039215688, 0.08627451, 1)
 
 [node name="NodeLight2" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/LeftPanel/NodeC/NodeLightBG" unique_id=1530229387]
@@ -699,6 +739,7 @@ offset_right = -5.845764
 offset_bottom = -5.357147
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.9607843, 0.9843137, 1, 1)
 script = ExtResource("3_bt401")
 thisNode = 3
@@ -738,6 +779,7 @@ offset_bottom = -31.578598
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("3_k6j8k")
 expand_mode = 1
 
@@ -753,6 +795,7 @@ offset_bottom = 0.5643158
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -1.5707964
+mouse_filter = 2
 texture = ExtResource("3_k6j8k")
 expand_mode = 1
 
@@ -805,6 +848,7 @@ offset_right = -7.7943726
 offset_bottom = -7.1428375
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.15294118, 0.16078432, 0.21960784, 1)
 
 [node name="NodeLabel" type="RichTextLabel" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg" unique_id=1133788673]
@@ -858,12 +902,15 @@ mouse_filter = 2
 texture = ExtResource("5_lkrxk")
 expand_mode = 1
 
-[node name="LineWhite" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob" unique_id=1855656605 groups=["Plug"]]
+[node name="LineWhite" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob" unique_id=1855656605 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.972549, 0.898039, 0.843137, 1)
 linkNode = 1
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob/LineWhite" unique_id=508154419]
 position = Vector2(0, 7.6293945e-06)
@@ -872,8 +919,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob/LineWhite/DragPlug" unique_id=2074899301]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob/LineWhite" unique_id=260497965]
@@ -897,12 +944,15 @@ mouse_filter = 2
 texture = ExtResource("8_ldq6e")
 expand_mode = 1
 
-[node name="LinePink" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob2" unique_id=975343089 groups=["Plug"]]
+[node name="LinePink" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob2" unique_id=975343089 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.99607843, 0.3529412, 0.56078434, 1)
 linkNode = 1
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob2/LinePink" unique_id=367323328]
 position = Vector2(0, 7.6293945e-06)
@@ -911,8 +961,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob2/LinePink/DragPlug" unique_id=2106902267]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob2/LinePink" unique_id=797402465]
@@ -936,12 +986,15 @@ mouse_filter = 2
 texture = ExtResource("9_5626q")
 expand_mode = 1
 
-[node name="LineRed" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob3" unique_id=1689472368 groups=["Plug"]]
+[node name="LineRed" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob3" unique_id=1689472368 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.54901963, 0, 0.07450981, 1)
 linkNode = 1
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob3/LineRed" unique_id=20393910]
 position = Vector2(0, 7.6293945e-06)
@@ -950,8 +1003,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob3/LineRed/DragPlug" unique_id=2140754441]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeA/SectorBg/Plugs/Knob3/LineRed" unique_id=617112895]
@@ -1045,15 +1098,19 @@ offset_right = -47.94342
 offset_bottom = -93.21447
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("5_lkrxk")
 expand_mode = 1
 
-[node name="LineWhite" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob" unique_id=1655155821 groups=["Plug"]]
+[node name="LineWhite" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob" unique_id=1655155821 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.972549, 0.898039, 0.843137, 1)
 linkNode = 2
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob/LineWhite" unique_id=190198086]
 position = Vector2(0, 7.6293945e-06)
@@ -1062,8 +1119,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob/LineWhite/DragPlug" unique_id=1758565892]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob/LineWhite" unique_id=2061027786]
@@ -1083,15 +1140,19 @@ offset_right = -47.94342
 offset_bottom = -46.785812
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("8_ldq6e")
 expand_mode = 1
 
-[node name="LinePink" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob2" unique_id=201637566 groups=["Plug"]]
+[node name="LinePink" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob2" unique_id=201637566 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.99607843, 0.3529412, 0.56078434, 1)
 linkNode = 2
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob2/LinePink" unique_id=141169125]
 position = Vector2(0, 7.6293945e-06)
@@ -1100,8 +1161,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob2/LinePink/DragPlug" unique_id=82628944]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob2/LinePink" unique_id=123202936]
@@ -1121,15 +1182,19 @@ offset_right = -47.94342
 offset_bottom = -3.9286194
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("9_5626q")
 expand_mode = 1
 
-[node name="LineRed" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob3" unique_id=1973372342 groups=["Plug"]]
+[node name="LineRed" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob3" unique_id=1973372342 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.54901963, 0, 0.07450981, 1)
 linkNode = 2
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob3/LineRed" unique_id=1711901417]
 position = Vector2(0, 7.6293945e-06)
@@ -1138,8 +1203,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob3/LineRed/DragPlug" unique_id=320018580]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeB/SectorBg/Plugs/Knob3/LineRed" unique_id=171757394]
@@ -1168,6 +1233,7 @@ offset_right = -5.8456726
 offset_bottom = -355.3578
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.039215688, 0.039215688, 0.08627451, 1)
 
 [node name="Sector" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg" unique_id=1019005545]
@@ -1181,6 +1247,7 @@ offset_right = -7.7943726
 offset_bottom = -7.1428375
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.15294118, 0.16078432, 0.21960784, 1)
 
 [node name="NodeLabel" type="RichTextLabel" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg" unique_id=2065527669]
@@ -1217,6 +1284,7 @@ offset_right = -150.04102
 offset_bottom = -8.928528
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Knob" type="TextureRect" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs" unique_id=1382098611]
 layout_mode = 1
@@ -1229,15 +1297,19 @@ offset_right = -47.94342
 offset_bottom = -93.21447
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("5_lkrxk")
 expand_mode = 1
 
-[node name="LineWhite" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob" unique_id=1326852058 groups=["Plug"]]
+[node name="LineWhite" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob" unique_id=1326852058 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.972549, 0.898039, 0.843137, 1)
 linkNode = 3
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob/LineWhite" unique_id=1979858000]
 position = Vector2(0, 7.6293945e-06)
@@ -1246,8 +1318,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob/LineWhite/DragPlug" unique_id=1710015767]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob/LineWhite" unique_id=749908461]
@@ -1267,15 +1339,19 @@ offset_right = -47.94342
 offset_bottom = -46.785812
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("8_ldq6e")
 expand_mode = 1
 
-[node name="LinePink" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob2" unique_id=1219694528 groups=["Plug"]]
+[node name="LinePink" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob2" unique_id=1219694528 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.99607843, 0.3529412, 0.56078434, 1)
 linkNode = 3
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob2/LinePink" unique_id=380482537]
 position = Vector2(0, 7.6293945e-06)
@@ -1284,8 +1360,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob2/LinePink/DragPlug" unique_id=1438996996]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob2/LinePink" unique_id=1757035360]
@@ -1305,15 +1381,19 @@ offset_right = -47.94342
 offset_bottom = -3.9286194
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("9_5626q")
 expand_mode = 1
 
-[node name="LineRed" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob3" unique_id=1958858555 groups=["Plug"]]
+[node name="LineRed" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob3" unique_id=1958858555 node_paths=PackedStringArray("dragPlug", "collisionShape", "line") groups=["Plug"]]
 position = Vector2(15.588681, 16.071457)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.54901963, 0, 0.07450981, 1)
 linkNode = 3
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob3/LineRed" unique_id=1902443041]
 position = Vector2(0, 7.6293945e-06)
@@ -1322,8 +1402,8 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob3/LineRed/DragPlug" unique_id=788286452]
 z_index = 2
 position = Vector2(-0.9743042, -0.8928833)
-scale = Vector2(0.99999994, 1.0000002)
-shape = SubResource("RectangleShape2D_5valb")
+scale = Vector2(1.67, 1.67)
+shape = SubResource("CircleShape2D_vnjsm")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob3/LineRed" unique_id=1254041148]
@@ -1377,6 +1457,7 @@ offset_right = -312.14276
 offset_bottom = -30.357239
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Knob" type="TextureRect" parent="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs" unique_id=1095090820]
 layout_mode = 1
@@ -1389,15 +1470,20 @@ offset_right = -42.868847
 offset_bottom = -21.428549
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("5_lkrxk")
 expand_mode = 1
 
-[node name="LineWhite" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob" unique_id=700637377 groups=["Plug"]]
+[node name="LineWhite" type="Node2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob" unique_id=700637377 node_paths=PackedStringArray("dragPlug", "collisionShape", "line", "initialPlug") groups=["Plug"]]
 position = Vector2(21.434437, 19.642838)
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("6_mxb8y")
 color = Color(0.972549, 0.898039, 0.843137, 1)
 linkNode = 1
+dragPlug = NodePath("DragPlug")
+collisionShape = NodePath("DragPlug/CollisionShape2D")
+line = NodePath("LineMain")
+initialPlug = NodePath("../../../../../LeftPanel/NodeA/Node3Right/Plug3")
 
 [node name="DragPlug" type="Area2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob/LineWhite" unique_id=977907431]
 position = Vector2(0, 7.6293945e-06)
@@ -1406,7 +1492,7 @@ script = ExtResource("7_0ima3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob/LineWhite/DragPlug" unique_id=461887877]
 z_index = 2
 scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("RectangleShape2D_5valb")
+shape = SubResource("CircleShape2D_tx082")
 debug_color = Color(1, 1, 1, 0.42)
 
 [node name="LineMain" type="Line2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob/LineWhite" unique_id=1605507822]
@@ -1415,19 +1501,48 @@ position = Vector2(1.7881393e-06, 0)
 width = 1.0
 default_color = Color(0.972549, 0.8980392, 0.84313726, 1)
 
-[node name="Button" type="Button" parent="Canvas/UI/Panels/ColorRect/RightPanel" unique_id=93165627]
-z_index = 5
-layout_mode = 0
-offset_left = 214.34433
-offset_top = 900.0016
-offset_right = 268.34433
-offset_bottom = 927.0016
+[node name="DisplayPanel" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/RightPanel" unique_id=2056220956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -321.5163
+offset_top = 844.6443
+offset_right = -38.971497
+offset_bottom = -94.64307
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.039215688, 0.039215688, 0.08627451, 1)
+
+[node name="Sector" type="ColorRect" parent="Canvas/UI/Panels/ColorRect/RightPanel/DisplayPanel" unique_id=1722387067]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.7943726
+offset_top = 7.1428375
+offset_right = -7.7943726
+offset_bottom = -7.1428375
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.15294118, 0.16078432, 0.21960784, 1)
+
+[node name="Display" type="Control" parent="Canvas/UI/Panels/ColorRect/RightPanel/DisplayPanel" unique_id=451623390]
+layout_mode = 1
+anchor_right = 0.98300004
+anchor_bottom = 0.96400005
+offset_left = 13.639923
+offset_top = 21.42868
+offset_right = -3.9398804
+offset_bottom = -8.885666
 script = ExtResource("11_vnjsm")
 
-[node name="tapeTex" type="Sprite2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/Button" unique_id=1857697824]
+[node name="tapeTex" type="Sprite2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/DisplayPanel/Display" unique_id=1068846286]
 position = Vector2(25, -10)
 
-[node name="Arrow" type="Sprite2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/Button" unique_id=1246516393]
+[node name="Arrow" type="Sprite2D" parent="Canvas/UI/Panels/ColorRect/RightPanel/DisplayPanel/Display" unique_id=1536807372]
 position = Vector2(-20, -15)
 
 [node name="Game" type="Node2D" parent="." unique_id=1825903677]
@@ -1446,9 +1561,10 @@ scale = Vector2(0.7199985, 0.7199985)
 board_controller = NodePath("../BoardController")
 win_text = NodePath("../../Canvas2/UI/ForegroundController/RichTextLabel")
 
-[node name="InputController" type="Node2D" parent="Game" unique_id=1886263416 node_paths=PackedStringArray("undo_controller")]
+[node name="InputController" type="Node2D" parent="Game" unique_id=1886263416 node_paths=PackedStringArray("undo_controller", "taper")]
 script = ExtResource("18_dkwgj")
 undo_controller = NodePath("../UndoController")
+taper = NodePath("../../Canvas/UI/Panels/ColorRect/RightPanel/DisplayPanel/Display")
 
 [node name="UndoController" type="Node2D" parent="Game" unique_id=2034786822 node_paths=PackedStringArray("board_controller", "player")]
 script = ExtResource("19_vkosf")
@@ -1531,4 +1647,3 @@ script = ExtResource("3_7byba")
 [connection signal="mouse_exited" from="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob3/LineRed/DragPlug" to="Canvas/UI/Panels/ColorRect/RightPanel/NodeC/SectorBg/Plugs/Knob3/LineRed/DragPlug" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob/LineWhite/DragPlug" to="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob/LineWhite/DragPlug" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob/LineWhite/DragPlug" to="Canvas/UI/Panels/ColorRect/RightPanel/Init/Plugs/Knob/LineWhite/DragPlug" method="_on_mouse_exited"]
-[connection signal="pressed" from="Canvas/UI/Panels/ColorRect/RightPanel/Button" to="Canvas/UI/Panels/ColorRect/RightPanel/Button" method="_on_pressed"]

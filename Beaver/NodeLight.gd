@@ -7,4 +7,4 @@ func _physics_process(delta: float) -> void:
 	if Global.curNode == thisNode:
 		color = Color.from_string("#f5fbff",Color.BLACK)
 	else:
-		color = Color.from_string("#0a0a16",Color.BLACK)
+		color = Color.from_string("#272938",Color.BLACK)

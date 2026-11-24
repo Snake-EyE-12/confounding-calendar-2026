@@ -1,18 +1,13 @@
 extends Node
 
 @export var undo_controller: Node
+@export var taper: TapeController
 
 func _input(event):
 	if not event is InputEventKey or not event.pressed or event.is_echo():
 		return
 
 	match event.keycode:
-		KEY_1:
-			undo_controller.change_board_state(1)
-		KEY_2:
-			undo_controller.change_board_state(2)
-		KEY_3:
-			undo_controller.change_board_state(3)
 		KEY_W, KEY_UP:
 			undo_controller.move_player(Vector2i.UP)
 		KEY_S, KEY_DOWN:
@@ -25,3 +20,8 @@ func _input(event):
 			undo_controller.undo()
 		KEY_R:
 			get_tree().reload_current_scene()
+		KEY_X:
+			var result = taper.advance()
+			if result == -1:
+				print("WRONG")
+			undo_controller.change_board_state(result)

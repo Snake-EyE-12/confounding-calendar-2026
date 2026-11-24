@@ -1,55 +1,62 @@
+
 extends Node2D
 
-@export var color : Color
-@export var state : int
-@export var linkNode : int
-@onready var PlugStartPos : Vector2 = $DragPlug/CollisionShape2D.global_position
-@onready var Line := $LineMain
+@export var color: Color
+@export var state: int
+@export var linkNode: int
+
+@export_group("References")
+@export var dragPlug: Area2D
+@export var collisionShape: CollisionShape2D
+@export var line: Line2D
+@export var initialPlug: Node2D
+
+var plugStartPos: Vector2
+var dragStartPos: Vector2
 
 func _ready() -> void:
-	Line.default_color = color
-	$DragPlug/CollisionShape2D.debug_color = color
-	var ParName = name
-	if ParName == "LineStart":
-		#$DragPlug.global_position = Vector2(45,234)
+	plugStartPos = collisionShape.global_position
+	dragStartPos = dragPlug.position
+
+	line.default_color = color
+	collisionShape.debug_color = color
+
+	if initialPlug:
 		makeHangLine()
-		$DragPlug.lockPlug($"../LeftPanel/Node1Left/Plug3")
-	pass
+		dragPlug.lockPlug(initialPlug)
 
 func _physics_process(delta: float) -> void:
-	#var origin: Vector2 = $DragPlug.global_position
-	if $DragPlug.isPressed:
+	if dragPlug.isPressed:
 		makeHangLine()
-		#setUpLinearLine()
-	elif $DragPlug.position != PlugStartPos:
+	elif dragPlug.position != dragStartPos:
 		makeHangLine()
 		returnPos()
 	else:
-		Line.clear_points()
+		line.clear_points()
 
 func makeHangLine() -> void:
-	Line.clear_points()
+	line.clear_points()
 	var curve := Curve2D.new()
 
-	#adjustment vector
-	var xAdj : float = abs($DragPlug/CollisionShape2D.global_position.x - PlugStartPos.x)
-	var yAdj := .5*xAdj
-	var AdjVec := Vector2(xAdj/2,yAdj)
-	
-	#Shadow Curve
-	curve.add_point(PlugStartPos, AdjVec)
-	curve.add_point($DragPlug/CollisionShape2D.global_position-Vector2(5, 0), AdjVec )
-	var ArrayCurvedPoints :PackedVector2Array = curve.get_baked_points()
-	for point in ArrayCurvedPoints:
-		Line.add_point(point)
+	var start = line.to_local(plugStartPos)
+	var end = line.to_local(collisionShape.global_position - Vector2(5, 0))
+
+	var xAdj: float = abs(end.x - start.x)
+	var yAdj := .5 * xAdj
+	var adjVec := Vector2(xAdj / 2, yAdj)
+
+	curve.add_point(start, adjVec)
+	curve.add_point(end, adjVec)
+
+	var curvedPoints: PackedVector2Array = curve.get_baked_points()
+	for point in curvedPoints:
+		line.add_point(point)
 
 func setUpLinearLine() -> void:
-	Line.clear_points()
-	Line.add_point(PlugStartPos)
-	Line.add_point($DragPlug/CollisionShape2D.global_position-Vector2(5, 0) )
+	line.clear_points()
+	line.add_point(line.to_local(plugStartPos))
+	line.add_point(line.to_local(collisionShape.global_position - Vector2(5, 0)))
 
 func returnPos() -> void:
-	#$DragPlug.position = PlugStartPos
-	if not $DragPlug.isLocked:
-		$DragPlug.position = lerp( $DragPlug.position , PlugStartPos,.07)
-	pass
+	if not dragPlug.isLocked:
+		dragPlug.position = lerp(dragPlug.position, dragStartPos, .07)

@@ -1,0 +1,722 @@
+[gd_scene format=3 uid="uid://dah5sfh8f6nhx"]
+
+[ext_resource type="Script" path="res://UI/Scripts/Global.gd" id="1_vd3hk"]
+[ext_resource type="Script" path="res://UI/Scripts/plugNode.gd" id="2_5uemy"]
+[ext_resource type="Script" path="res://UI/Scripts/buttonTape.gd" id="3_gxqu4"]
+[ext_resource type="Script" path="res://UI/Scripts/draw_line.gd" id="4_yskqk"]
+[ext_resource type="Script" path="res://UI/Scripts/drag_plug.gd" id="5_vyi5e"]
+[ext_resource type="Script" path="res://UI/Scripts/NodeLight.gd" id="6_xpd2e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af6lf"]
+size = Vector2(15.8125, 4.5)
+
+[node name="Node2D" type="Node2D" unique_id=292589642]
+script = ExtResource("1_vd3hk")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1667164325]
+offset_left = -36.0
+offset_top = -21.0
+offset_right = 551.0
+offset_bottom = 683.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="LeftPanel" type="ColorRect" parent="." unique_id=1717415192]
+offset_left = 12.0
+offset_top = 14.0
+offset_right = 229.0
+offset_bottom = 540.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+color = Color(0.152941, 0.160784, 0.219608, 1)
+
+[node name="Node3Right" type="Control" parent="LeftPanel" unique_id=2018395535]
+anchors_preset = 0
+offset_left = -29.2288
+offset_top = -25.0001
+offset_right = 10.7712
+offset_bottom = 14.9999
+
+[node name="Plug3" type="Node2D" parent="LeftPanel/Node3Right" unique_id=17173614 groups=["Slots"]]
+position = Vector2(179.27, 139.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 3
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Right/Plug3" unique_id=415569177]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug2" type="Node2D" parent="LeftPanel/Node3Right" unique_id=281333287 groups=["Slots"]]
+position = Vector2(179.27, 164.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 3
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Right/Plug2" unique_id=659016959]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug1" type="Node2D" parent="LeftPanel/Node3Right" unique_id=670224613 groups=["Slots"]]
+position = Vector2(179.27, 189.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 3
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Right/Plug1" unique_id=360809257]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Node3Left" type="Control" parent="LeftPanel" unique_id=904932811]
+anchors_preset = 0
+offset_left = -122.761
+offset_top = -25.0001
+offset_right = -82.7609
+offset_bottom = 14.9999
+
+[node name="Plug3" type="Node2D" parent="LeftPanel/Node3Left" unique_id=185381809 groups=["Slots"]]
+position = Vector2(179.27, 139.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 3
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug3" unique_id=382964169]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug2" type="Node2D" parent="LeftPanel/Node3Left" unique_id=1783710103 groups=["Slots"]]
+position = Vector2(179.27, 164.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 3
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug2" unique_id=845438085]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug1" type="Node2D" parent="LeftPanel/Node3Left" unique_id=1123253885 groups=["Slots"]]
+position = Vector2(179.27, 189.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 3
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node3Left/Plug1" unique_id=578987007]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Node2Right" type="Control" parent="LeftPanel" unique_id=2023676072]
+anchors_preset = 0
+offset_left = -29.2288
+offset_top = 110.715
+offset_right = 10.7712
+offset_bottom = 150.715
+
+[node name="Plug3" type="Node2D" parent="LeftPanel/Node2Right" unique_id=1260178823 groups=["Slots"]]
+position = Vector2(179.27, 139.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 2
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Right/Plug3" unique_id=668518296]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug2" type="Node2D" parent="LeftPanel/Node2Right" unique_id=604700318 groups=["Slots"]]
+position = Vector2(179.27, 164.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 2
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Right/Plug2" unique_id=714955895]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug1" type="Node2D" parent="LeftPanel/Node2Right" unique_id=298131676 groups=["Slots"]]
+position = Vector2(179.27, 189.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 2
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Right/Plug1" unique_id=1030338078]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Node2Left" type="Control" parent="LeftPanel" unique_id=1287494027]
+anchors_preset = 0
+offset_left = -122.761
+offset_top = 110.715
+offset_right = -82.7609
+offset_bottom = 150.715
+
+[node name="Plug3" type="Node2D" parent="LeftPanel/Node2Left" unique_id=363221664 groups=["Slots"]]
+position = Vector2(179.27, 139.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 2
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug3" unique_id=1904517014]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug2" type="Node2D" parent="LeftPanel/Node2Left" unique_id=97811675 groups=["Slots"]]
+position = Vector2(179.27, 164.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 2
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug2" unique_id=1272394300]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug1" type="Node2D" parent="LeftPanel/Node2Left" unique_id=1505944811 groups=["Slots"]]
+position = Vector2(179.27, 189.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 2
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node2Left/Plug1" unique_id=1303704585]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Node1Right" type="Control" parent="LeftPanel" unique_id=907427979]
+anchors_preset = 0
+offset_left = -29.2288
+offset_top = 251.786
+offset_right = 10.7712
+offset_bottom = 291.786
+
+[node name="Plug3" type="Node2D" parent="LeftPanel/Node1Right" unique_id=1569277674 groups=["Slots"]]
+position = Vector2(179.27, 139.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 1
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Right/Plug3" unique_id=1834226439]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug2" type="Node2D" parent="LeftPanel/Node1Right" unique_id=1787666139 groups=["Slots"]]
+position = Vector2(179.27, 164.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 1
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Right/Plug2" unique_id=1531819905]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug1" type="Node2D" parent="LeftPanel/Node1Right" unique_id=2064224353 groups=["Slots"]]
+position = Vector2(179.27, 189.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+isRight = true
+nodeNum = 1
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Right/Plug1" unique_id=428349803]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Node1Left" type="Control" parent="LeftPanel" unique_id=173288828]
+anchors_preset = 0
+offset_left = -122.761
+offset_top = 251.786
+offset_right = -82.7609
+offset_bottom = 291.786
+
+[node name="Plug3" type="Node2D" parent="LeftPanel/Node1Left" unique_id=1965831601 groups=["Slots"]]
+position = Vector2(179.27, 139.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 1
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug3" unique_id=312601360]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug2" type="Node2D" parent="LeftPanel/Node1Left" unique_id=485103164 groups=["Slots"]]
+position = Vector2(179.27, 164.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 1
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug2" unique_id=2120969277]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="Plug1" type="Node2D" parent="LeftPanel/Node1Left" unique_id=1698183361 groups=["Slots"]]
+position = Vector2(179.27, 189.286)
+scale = Vector2(1.94859, 1.78572)
+script = ExtResource("2_5uemy")
+nodeNum = 1
+
+[node name="ColorRect" type="ColorRect" parent="LeftPanel/Node1Left/Plug1" unique_id=1763045237]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="RightPanel" type="ColorRect" parent="." unique_id=1674514262]
+offset_left = 130.0
+offset_top = 14.0
+offset_right = 365.0
+offset_bottom = 540.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+color = Color(0.152941, 0.160784, 0.219608, 1)
+
+[node name="Node1Label" type="RichTextLabel" parent="." unique_id=340292692]
+offset_left = 55.0
+offset_top = 220.0
+offset_right = 111.0
+offset_bottom = 308.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "1"
+
+[node name="Node2Label" type="RichTextLabel" parent="." unique_id=1438243922]
+offset_left = 55.0
+offset_top = 142.0
+offset_right = 111.0
+offset_bottom = 230.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "2"
+
+[node name="Node3Label" type="RichTextLabel" parent="." unique_id=1441296886]
+offset_left = 56.0
+offset_top = 66.0
+offset_right = 112.0
+offset_bottom = 154.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "3"
+
+[node name="LeftLabel" type="RichTextLabel" parent="." unique_id=2009526066]
+offset_left = 32.0
+offset_top = 37.0
+offset_right = 59.0
+offset_bottom = 92.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "L"
+
+[node name="RightLabel" type="RichTextLabel" parent="." unique_id=89707523]
+offset_left = 89.0
+offset_top = 37.0
+offset_right = 116.0
+offset_bottom = 92.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "R"
+
+[node name="Plug1Label" type="RichTextLabel" parent="." unique_id=2141051583]
+offset_left = 219.0
+offset_top = 139.0
+offset_right = 275.0
+offset_bottom = 227.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "1"
+
+[node name="Plug2Label" type="RichTextLabel" parent="." unique_id=191122056]
+offset_left = 219.0
+offset_top = 83.0
+offset_right = 275.0
+offset_bottom = 171.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "2"
+
+[node name="Plug3Label" type="RichTextLabel" parent="." unique_id=724476595]
+offset_left = 219.0
+offset_top = 28.0
+offset_right = 275.0
+offset_bottom = 116.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "3"
+
+[node name="StartLabel" type="RichTextLabel" parent="." unique_id=970347046]
+offset_left = 203.0
+offset_top = 192.0
+offset_right = 294.0
+offset_bottom = 280.0
+scale = Vector2(0.513193, 0.559999)
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/mono_font_size = 1
+text = "START"
+
+[node name="Button" type="Button" parent="." unique_id=280789870]
+z_index = 5
+offset_left = 167.0
+offset_top = 267.0
+offset_right = 221.0
+offset_bottom = 294.0
+script = ExtResource("3_gxqu4")
+
+[node name="tapeTex" type="Sprite2D" parent="Button" unique_id=377538170]
+position = Vector2(25, -10)
+
+[node name="Arrow" type="Sprite2D" parent="Button" unique_id=1120655458]
+position = Vector2(-20, -15)
+
+[node name="LineStart" type="Node2D" parent="." unique_id=615944724]
+script = ExtResource("4_yskqk")
+color = Color(0.0392157, 0.0392157, 0.0862745, 1)
+
+[node name="DragPlug" type="Area2D" parent="LineStart" unique_id=1225488659]
+position = Vector2(192, 201)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineStart/DragPlug" unique_id=269687910]
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineShadow" type="Line2D" parent="LineStart" unique_id=1948845767]
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.972549, 0.898039, 0.843137, 1)
+
+[node name="LineMain" type="Line2D" parent="LineStart" unique_id=492026373]
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="Plug1s" type="Control" parent="." unique_id=127360285]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LineWhite" type="Node2D" parent="Plug1s" unique_id=291801380 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.972549, 0.898039, 0.843137, 1)
+linkNode = 1
+
+[node name="DragPlug" type="Area2D" parent="Plug1s/LineWhite" unique_id=86827699]
+position = Vector2(203, 172)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LineWhite/DragPlug" unique_id=185026804]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug1s/LineWhite" unique_id=1720971597]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="LinePink" type="Node2D" parent="Plug1s" unique_id=1336698412 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.996078, 0.352941, 0.560784, 1)
+state = 1
+linkNode = 1
+
+[node name="DragPlug" type="Area2D" parent="Plug1s/LinePink" unique_id=989591597]
+position = Vector2(203, 161)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LinePink/DragPlug" unique_id=890544884]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug1s/LinePink" unique_id=1994436153]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="LineRed" type="Node2D" parent="Plug1s" unique_id=1611815696 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.54902, 0, 0.0745098, 1)
+state = 2
+linkNode = 1
+
+[node name="DragPlug" type="Area2D" parent="Plug1s/LineRed" unique_id=961027425]
+position = Vector2(203, 150)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug1s/LineRed/DragPlug" unique_id=322763845]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug1s/LineRed" unique_id=490947454]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="Plug2s" type="Control" parent="." unique_id=1079124711]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LineWhite" type="Node2D" parent="Plug2s" unique_id=805776216 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.972549, 0.898039, 0.843137, 1)
+linkNode = 2
+
+[node name="DragPlug" type="Area2D" parent="Plug2s/LineWhite" unique_id=104128466]
+position = Vector2(204, 114)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LineWhite/DragPlug" unique_id=1982017284]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug2s/LineWhite" unique_id=555141148]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="LinePink" type="Node2D" parent="Plug2s" unique_id=890298787 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.996078, 0.352941, 0.560784, 1)
+state = 1
+linkNode = 2
+
+[node name="DragPlug" type="Area2D" parent="Plug2s/LinePink" unique_id=1342550138]
+position = Vector2(204, 103)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LinePink/DragPlug" unique_id=1137082880]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug2s/LinePink" unique_id=1622664190]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="LineRed" type="Node2D" parent="Plug2s" unique_id=770810574 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.54902, 0, 0.0745098, 1)
+state = 2
+linkNode = 2
+
+[node name="DragPlug" type="Area2D" parent="Plug2s/LineRed" unique_id=1935298162]
+position = Vector2(204, 92)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug2s/LineRed/DragPlug" unique_id=663884300]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug2s/LineRed" unique_id=1232615702]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="Plug3s" type="Control" parent="." unique_id=2074010202]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LineWhite" type="Node2D" parent="Plug3s" unique_id=810495936 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.972549, 0.898039, 0.843137, 1)
+linkNode = 3
+
+[node name="DragPlug" type="Area2D" parent="Plug3s/LineWhite" unique_id=37979733]
+position = Vector2(204, 58)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LineWhite/DragPlug" unique_id=1540177813]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug3s/LineWhite" unique_id=121008619]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="LinePink" type="Node2D" parent="Plug3s" unique_id=380985745 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.996078, 0.352941, 0.560784, 1)
+state = 1
+linkNode = 3
+
+[node name="DragPlug" type="Area2D" parent="Plug3s/LinePink" unique_id=1887270572]
+position = Vector2(204, 47)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LinePink/DragPlug" unique_id=1221959813]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug3s/LinePink" unique_id=1496656484]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="LineRed" type="Node2D" parent="Plug3s" unique_id=1480223908 groups=["Plug"]]
+script = ExtResource("4_yskqk")
+color = Color(0.54902, 0, 0.0745098, 1)
+state = 2
+linkNode = 3
+
+[node name="DragPlug" type="Area2D" parent="Plug3s/LineRed" unique_id=1364694804]
+position = Vector2(204, 36)
+script = ExtResource("5_vyi5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plug3s/LineRed/DragPlug" unique_id=2033405656]
+z_index = 2
+shape = SubResource("RectangleShape2D_af6lf")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineMain" type="Line2D" parent="Plug3s/LineRed" unique_id=364285713]
+z_index = 2
+position = Vector2(13, 0)
+width = 1.0
+default_color = Color(0.960784, 0.984314, 1, 1)
+
+[node name="Lights" type="Node2D" parent="." unique_id=709729817]
+
+[node name="NodeLight1" type="ColorRect" parent="Lights" unique_id=1959098137]
+offset_left = 60.0
+offset_top = 217.0
+offset_right = 71.0
+offset_bottom = 228.0
+script = ExtResource("6_xpd2e")
+thisNode = 1
+
+[node name="NodeLight2" type="ColorRect" parent="Lights" unique_id=168849657]
+offset_left = 60.0
+offset_top = 138.0
+offset_right = 71.0
+offset_bottom = 149.0
+script = ExtResource("6_xpd2e")
+thisNode = 2
+
+[node name="NodeLight3" type="ColorRect" parent="Lights" unique_id=600477722]
+offset_left = 60.0
+offset_top = 62.0
+offset_right = 71.0
+offset_bottom = 73.0
+script = ExtResource("6_xpd2e")
+thisNode = 3
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="LineStart/DragPlug" to="LineStart/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LineStart/DragPlug" to="LineStart/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug1s/LineWhite/DragPlug" to="Plug1s/LineWhite/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug1s/LineWhite/DragPlug" to="Plug1s/LineWhite/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug1s/LinePink/DragPlug" to="Plug1s/LinePink/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug1s/LinePink/DragPlug" to="Plug1s/LinePink/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug1s/LineRed/DragPlug" to="Plug1s/LineRed/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug1s/LineRed/DragPlug" to="Plug1s/LineRed/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug2s/LineWhite/DragPlug" to="Plug2s/LineWhite/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug2s/LineWhite/DragPlug" to="Plug2s/LineWhite/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug2s/LinePink/DragPlug" to="Plug2s/LinePink/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug2s/LinePink/DragPlug" to="Plug2s/LinePink/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug2s/LineRed/DragPlug" to="Plug2s/LineRed/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug2s/LineRed/DragPlug" to="Plug2s/LineRed/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug3s/LineWhite/DragPlug" to="Plug3s/LineWhite/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug3s/LineWhite/DragPlug" to="Plug3s/LineWhite/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug3s/LinePink/DragPlug" to="Plug3s/LinePink/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug3s/LinePink/DragPlug" to="Plug3s/LinePink/DragPlug" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Plug3s/LineRed/DragPlug" to="Plug3s/LineRed/DragPlug" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plug3s/LineRed/DragPlug" to="Plug3s/LineRed/DragPlug" method="_on_mouse_exited"]

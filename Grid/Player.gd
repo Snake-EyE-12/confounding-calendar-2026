@@ -44,6 +44,8 @@ func move(direction: Vector2i):
 
 func get_collectable(item):
 	collectables.append(item.item_name)
+	if item.item_name.contains("key"):
+		Global.audio_player.play_key_pickup()
 
 	if item.item_name == "goal":
 		Global.audio_player.play_win()

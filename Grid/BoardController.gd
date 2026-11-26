@@ -76,9 +76,11 @@ func can_move_to(grid_position: Vector2i, player: PlayerController):
 	for item in preset_items:
 		if item.position == grid_position:
 			if "door1" in item.item_name:
-				if "key1" in player.get_collected_items():
-					return true
-				return false
+				return "key1" in player.get_collected_items()
+			if "door2" in item.item_name:
+				return "key2" in player.get_collected_items()
+			if "door3" in item.item_name:
+				return "key3" in player.get_collected_items()
 			return true
 	return true
 

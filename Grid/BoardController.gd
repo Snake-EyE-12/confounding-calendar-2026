@@ -11,13 +11,73 @@ var current_state: int = 1
 var tiles: Array = []
 var item_instances: Array[Node2D] = []
 
+# 1 White 2 Pink 3 Red
+
 var board_layout = [
-	[0, 1, 1, 0, 9],
-	[0, 3, 2, 9, 3],
-	[9, 3, 1, 0, 2],
-	[2, 1, 2, 1, 9],
-	[1, 3, 9, 0, 9]
+	[0, 0, 0],
+	[0, 0, 0],
+	[0, 0, 0]
 ]
+
+#var board_layout = [
+	#[0, 3, 3, 2, 3, 9, 0, 0, 0, 0, 0],
+	#[2, 2, 3, 1, 3, 1, 2, 0, 0, 0, 0],
+	#[1, 1, 9, 0, 2, 0, 0, 0, 0, 0, 0],
+	#[3, 9, 3, 1, 2, 9, 0, 0, 0, 0, 0],
+	#[1, 2, 3, 2, 1, 9, 0, 0, 0, 0, 0],
+	#[9, 9, 9, 9, 9, 9, 9, 9, 0, 9, 9],
+	#[9, 9, 9, 9, 9, 9, 0, 0, 0, 0, 0],
+	#[9, 9, 0, 0, 0, 9, 0, 0, 0, 0, 0],
+	#[9, 9, 0, 0, 0, 0, 0, 0, 9, 0, 0],
+	#[9, 9, 0, 0, 0, 9, 0, 0, 0, 0, 0],
+	#[9, 9, 9, 9, 9, 9, 0, 0, 0, 0, 0]
+#]
+func config1():
+	self.tile_size = 48
+	self.grid_origin = Vector2(-250, 40)
+	self.preset_items[0].position = Vector2i(3,1)
+	self.preset_items[1].position = Vector2i(5,2)
+	self.preset_items[2].position = Vector2i(3,8)
+	self.preset_items[3].position = Vector2i(9,1)
+	self.preset_items[4].position = Vector2i(8,5)
+	self.board_layout = [
+		[0, 3, 3, 2, 3, 9, 0, 0, 0, 1, 0],
+		[2, 2, 3, 1, 3, 9, 3, 3, 3, 2, 1],
+		[1, 1, 9, 0, 2, 0, 1, 2, 3, 2, 1],
+		[3, 9, 3, 1, 2, 9, 2, 3, 1, 2, 3],
+		[1, 2, 3, 2, 1, 9, 3, 1, 2, 3, 1],
+		[9, 9, 9, 9, 9, 9, 9, 9, 0, 9, 9],
+		[9, 9, 9, 9, 9, 9, 1, 2, 1, 2, 1],
+		[9, 9, 0, 0, 0, 9, 2, 1, 2, 1, 2],
+		[9, 9, 0, 0, 0, 0, 1, 2, 9, 2, 1],
+		[9, 9, 0, 0, 0, 9, 2, 1, 2, 1, 2],
+		[9, 9, 9, 9, 9, 9, 1, 2, 1, 2, 1]
+	]
+func config2():
+	self.tile_size = 48
+	self.grid_origin = Vector2(-250, 40)
+	self.preset_items[0].position = Vector2i(9,9)
+	self.preset_items[1].position = Vector2i(6,5)
+	self.preset_items[2].position = Vector2i(9,1)
+	self.preset_items[3].position = Vector2i(19,19)
+	self.preset_items[4].position = Vector2i(19,19)
+	self.board_layout = [
+		[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+		[9, 3, 1, 2, 3, 2, 3, 0, 2, 0, 9],
+		[9, 1, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+		[9, 2, 9, 3, 1, 2, 1, 3, 1, 2, 9],
+		[9, 3, 9, 1, 9, 9, 9, 9, 9, 1, 9],
+		[9, 2, 9, 2, 1, 0, 2, 3, 9, 3, 9],
+		[9, 1, 9, 9, 9, 9, 9, 2, 9, 1, 9],
+		[9, 0, 1, 3, 2, 1, 3, 1, 9, 2, 9],
+		[9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 9],
+		[9, 9, 9, 9, 9, 9, 9, 9, 9, 3, 9],
+		[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+	]
+func config0():
+	pass
+func prep_config():
+	config2()
 
 func get_state() -> int:
 	return current_state
@@ -36,6 +96,7 @@ func restore_state(state: int, items: Array):
 		item_instances[i].visible = items[i]
 
 func _ready():
+	prep_config()
 	build_board()
 	initialize_items()
 	change_state(current_state)
@@ -68,6 +129,7 @@ func initialize_items():
 
 		var instance = item.item_scene.instantiate()
 		instance.position = grid_to_world(item.position)
+		instance.scale = Vector2.ONE * (tile_size / 100.0)
 		add_child(instance)
 		instance.visible = item.visible
 		item_instances.append(instance)

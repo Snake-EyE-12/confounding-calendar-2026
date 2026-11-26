@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://doemu6fuxv2ge"]
+
+[ext_resource type="Texture2D" uid="uid://bmo13ug03cv4w" path="res://ItemSprites/key2.png" id="1_t06xs"]
+
+[node name="KeyItem" type="Node2D" unique_id=1645251990]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1738290937]
+texture = ExtResource("1_t06xs")

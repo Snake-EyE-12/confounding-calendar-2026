@@ -19,7 +19,8 @@ func on_advance_tape():
 	save_snapshot()
 
 func move_tape():
-	
+	if player.is_moving or player.is_dead or "goal" in player.get_collected_items():
+		return
 	var result = tape.advance()
 	if result == -1:
 		print("Tape did not move")

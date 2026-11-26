@@ -7,7 +7,7 @@ class_name PlayerController
 
 @export var win_text: RichTextLabel
 
-var grid_position: Vector2i = Vector2i(0, 0)
+var grid_position: Vector2i = Vector2i(5, 5)
 var is_moving: bool = false
 var is_dead: bool = false
 

@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://bn8rn7g273qsg" path="res://Grid/Player.tscn" id="17_8b6k5"]
 [ext_resource type="Script" uid="uid://b460u8uxvoosd" path="res://Grid/UserInputController.gd" id="18_dkwgj"]
 [ext_resource type="Script" uid="uid://2xddrf1ckqtq" path="res://Grid/UndoController.gd" id="19_vkosf"]
+[ext_resource type="PackedScene" uid="uid://doemu6fuxv2ge" path="res://Grid/ItemScenes/KeyItem2.tscn" id="20_ctwaq"]
+[ext_resource type="PackedScene" uid="uid://bw3rujc2qn7mc" path="res://Grid/ItemScenes/DoorItem2.tscn" id="21_x4fcs"]
 [ext_resource type="Script" uid="uid://bm6ic5ygcnd6d" path="res://Sounds/AudioPlayer.gd" id="23_fqw1m"]
 [ext_resource type="AudioStream" uid="uid://b1o4f0dueeprw" path="res://Sounds/plugged_in_sfx.wav" id="24_gjfml"]
 [ext_resource type="AudioStream" uid="uid://dhe1ff6mhfkx2" path="res://Sounds/machine_activate_sfx.wav" id="25_4g00q"]
@@ -66,7 +68,7 @@ metadata/_custom_type_script = "uid://niithktukvrs"
 [sub_resource type="Resource" id="Resource_ion7q"]
 script = ExtResource("13_tcpmg")
 item_name = "key1"
-position = Vector2i(4, 1)
+position = Vector2i(3, 1)
 item_scene = ExtResource("14_fqw1m")
 collectable = true
 metadata/_custom_type_script = "uid://dfp6jjlu7gw51"
@@ -74,24 +76,31 @@ metadata/_custom_type_script = "uid://dfp6jjlu7gw51"
 [sub_resource type="Resource" id="Resource_kkeeh"]
 script = ExtResource("13_tcpmg")
 item_name = "door1"
-position = Vector2i(1, 3)
+position = Vector2i(5, 2)
 item_scene = ExtResource("15_5vb1j")
 metadata/_custom_type_script = "uid://dfp6jjlu7gw51"
 
 [sub_resource type="Resource" id="Resource_hwwm8"]
 script = ExtResource("13_tcpmg")
 item_name = "goal"
-position = Vector2i(0, 4)
+position = Vector2i(3, 8)
 item_scene = ExtResource("16_duppl")
 collectable = true
 metadata/_custom_type_script = "uid://dfp6jjlu7gw51"
 
 [sub_resource type="Resource" id="Resource_ctwaq"]
 script = ExtResource("13_tcpmg")
-item_name = "key1"
-position = Vector2i(3, 0)
-item_scene = ExtResource("14_fqw1m")
+item_name = "key2"
+position = Vector2i(9, 1)
+item_scene = ExtResource("20_ctwaq")
 collectable = true
+metadata/_custom_type_script = "uid://dfp6jjlu7gw51"
+
+[sub_resource type="Resource" id="Resource_onalg"]
+script = ExtResource("13_tcpmg")
+item_name = "door2"
+position = Vector2i(8, 5)
+item_scene = ExtResource("21_x4fcs")
 metadata/_custom_type_script = "uid://dfp6jjlu7gw51"
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_cr84u"]
@@ -1650,9 +1659,9 @@ script = ExtResource("10_n17h6")
 background_controller = NodePath("../../Canvas/UI/BackgroundController")
 tile_colors = Array[ExtResource("11_gkgex")]([SubResource("Resource_2pjv3"), SubResource("Resource_ls3q4"), SubResource("Resource_x65sb"), SubResource("Resource_6dpd2")])
 tile_scene = ExtResource("12_vnjsm")
-tile_size = 100.0
-preset_items = Array[ExtResource("13_tcpmg")]([SubResource("Resource_ion7q"), SubResource("Resource_kkeeh"), SubResource("Resource_hwwm8"), SubResource("Resource_ctwaq")])
-grid_origin = Vector2(-200, 0)
+tile_size = 48.0
+preset_items = Array[ExtResource("13_tcpmg")]([SubResource("Resource_ion7q"), SubResource("Resource_kkeeh"), SubResource("Resource_hwwm8"), SubResource("Resource_ctwaq"), SubResource("Resource_onalg")])
+grid_origin = Vector2(-250, 40)
 
 [node name="Player" parent="Game" unique_id=791023873 node_paths=PackedStringArray("board_controller", "win_text") instance=ExtResource("17_8b6k5")]
 visibility_layer = 17

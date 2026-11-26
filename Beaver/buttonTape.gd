@@ -22,6 +22,7 @@ const ARROW_GAP_RATIO = 0.07
 
 
 func _ready() -> void:
+	Global.curNode = 1
 	tape.resize(tLength)
 	for i in range(tLength):
 		tape[i] = 0

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ba5nbu03yyvk5"]
+
+[ext_resource type="Script" uid="uid://bp38r302ygits" path="res://Combine/back_circle.gd" id="1_xbq3k"]
+
+[node name="BackgroundCircle" type="ColorRect" unique_id=1650525744]
+script = ExtResource("1_xbq3k")

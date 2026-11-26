@@ -28,7 +28,10 @@ func _physics_process(delta: float) -> void:
 	if isPressed:
 		global_position = get_global_mouse_position()
 
-func lockPlug(plug) -> void:
+func lockPlug(plug, recordUndo := false) -> void:
+	if recordUndo:
+		Global.connection_made.emit()
+
 	Global.plugSlots.erase(plug)
 
 	var shiftPos = plug.global_position + Vector2(7, 0)
@@ -43,8 +46,13 @@ func checkPlug() -> void:
 		var dis = global_position.distance_squared_to(shiftPos)
 
 		if dis < 300:
-			lockPlug(s)
+			lockPlug(s, true)
+			Global.audio_player.play_plug_wire()
 			return
+
+func resetInteraction() -> void:
+	isPressed = false
+	isMouseIn = false
 
 func _on_mouse_entered() -> void:
 	isMouseIn = true

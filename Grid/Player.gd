@@ -26,14 +26,13 @@ func move(direction: Vector2i):
 	if not can_move_to:
 		return
 
-	
 	var tile = board_controller.get_tile_at(target_grid)
-
 	if tile == null:
 		return
 
 	grid_position = target_grid
 	is_moving = true
+	Global.audio_player.play_move()
 
 	var tween = create_tween()
 	tween.tween_property(self, "position", board_controller.grid_to_world(grid_position), move_duration)
@@ -42,18 +41,20 @@ func move(direction: Vector2i):
 		is_moving = false
 		check_walkable()
 	)
-func get_collectable(item):
-	if item.item_name not in collectables:
-		collectables.append(item.item_name)
-		if item.item_name == "goal":
-			win_text.move_to_center()
 
+func get_collectable(item):
+	collectables.append(item.item_name)
+
+	if item.item_name == "goal":
+		Global.audio_player.play_win()
+		win_text.move_to_center()
 
 func restore_state(position: Vector2i, dead: bool, collected_items):
 	grid_position = position
 	is_dead = dead
 	is_moving = false
-	collectables = collected_items
+	collectables = collected_items.duplicate()
+
 	if "goal" not in collected_items:
 		win_text.reset_position()
 
@@ -68,12 +69,13 @@ func check_walkable():
 		die()
 
 func get_collected_items():
-	return collectables
+	return collectables.duplicate()
 
 func die():
 	if is_dead:
 		return
 
+	Global.audio_player.play_lose()
 	is_dead = true
 
 	var tween = create_tween()

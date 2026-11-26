@@ -1,58 +1,36 @@
-
 class_name BackgroundController
 extends Control
 
 @export var animation_duration: float = 0.4
-
 @export var current_background: ColorRect
-@export var transition_background: ColorRect
+@export var background_circle: PackedScene
 
-var current_tween: Tween
+var current_tweens: Array[Tween] = []
 
 func _ready():
 	current_background.color = Color("#f8e5d7")
 
-	var shader = Shader.new()
-	shader.code = """
-shader_type canvas_item;
-
-uniform float radius = 0.0;
-
-void fragment() {
-	float distance_from_center = length(UV - vec2(0.5));
-	float alpha = 1.0 - smoothstep(radius - 0.005, radius, distance_from_center);
-	COLOR = vec4(COLOR.rgb, alpha);
-}
-"""
-	var material = ShaderMaterial.new()
-	material.shader = shader
-
-	transition_background.material = material
-	transition_background.material.set_shader_parameter("radius", 0.0)
-	transition_background.visible = false
 
 func change_color(color: Color, instant: bool = false):
-	if current_tween and current_tween.is_running():
-		current_tween.kill()
-		current_background.color = transition_background.color
-		transition_background.visible = false
-
 	if instant:
+		for tween in current_tweens:
+			if tween and tween.is_running():
+				tween.kill()
+
+		current_tweens.clear()
+
+		for child in get_children():
+			if child is ColorRect and child != current_background:
+				child.queue_free()
+
 		current_background.color = color
-		transition_background.visible = false
 		return
 
-	transition_background.color = color
-	transition_background.visible = true
-	transition_background.material.set_shader_parameter("radius", 0.0)
+	Global.audio_player.play_state_change()
+	var circle = background_circle.instantiate()
+	add_child(circle)
 
-	current_tween = create_tween()
-	current_tween.tween_method(
-		func(value): transition_background.material.set_shader_parameter("radius", value),
-		0.0, 1.0, animation_duration
-	)
-
-	current_tween.tween_callback(func():
+	circle.play(color, animation_duration, func():
 		current_background.color = color
-		transition_background.visible = false
+		circle.queue_free()
 	)

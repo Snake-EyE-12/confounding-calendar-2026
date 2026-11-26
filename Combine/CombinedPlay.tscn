@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dtwnnlgx2k6ly" path="res://Utilities/WinText.gd" id="3_7byba"]
 [ext_resource type="Script" uid="uid://baghx372u3g6w" path="res://Beaver/NodeLight.gd" id="3_bt401"]
 [ext_resource type="Texture2D" uid="uid://535mcwvm1avb" path="res://Combine/Assets/arrow.png" id="3_k6j8k"]
+[ext_resource type="PackedScene" uid="uid://ba5nbu03yyvk5" path="res://Combine/BackgroundCircle.tscn" id="3_tcpmg"]
 [ext_resource type="Texture2D" uid="uid://2t3dtkwtkdtr" path="res://Combine/Assets/circle.png" id="5_lkrxk"]
 [ext_resource type="Script" uid="uid://6ldt6taxkjbr" path="res://Beaver/draw_line.gd" id="6_mxb8y"]
 [ext_resource type="Script" uid="uid://c0or52p81s25k" path="res://Beaver/drag_plug.gd" id="7_0ima3"]
@@ -23,6 +24,15 @@
 [ext_resource type="PackedScene" uid="uid://bn8rn7g273qsg" path="res://Grid/Player.tscn" id="17_8b6k5"]
 [ext_resource type="Script" uid="uid://b460u8uxvoosd" path="res://Grid/UserInputController.gd" id="18_dkwgj"]
 [ext_resource type="Script" uid="uid://2xddrf1ckqtq" path="res://Grid/UndoController.gd" id="19_vkosf"]
+[ext_resource type="Script" uid="uid://bm6ic5ygcnd6d" path="res://Sounds/AudioPlayer.gd" id="23_fqw1m"]
+[ext_resource type="AudioStream" uid="uid://b1o4f0dueeprw" path="res://Sounds/plugged_in_sfx.wav" id="24_gjfml"]
+[ext_resource type="AudioStream" uid="uid://dhe1ff6mhfkx2" path="res://Sounds/machine_activate_sfx.wav" id="25_4g00q"]
+[ext_resource type="AudioStream" uid="uid://bqfp2q2petl6h" path="res://Sounds/missing_wire_sfx.wav" id="26_ctwaq"]
+[ext_resource type="AudioStream" uid="uid://kaaqms8jj2rw" path="res://Sounds/state_change_sfx.wav" id="27_x4fcs"]
+[ext_resource type="AudioStream" uid="uid://dbc2vcj1niv6p" path="res://Sounds/pickup_sfx.wav" id="28_kcxif"]
+[ext_resource type="AudioStream" uid="uid://dd6qq7bb8dwmx" path="res://Sounds/move_sfx.wav" id="29_7543b"]
+[ext_resource type="AudioStream" uid="uid://032bglhcvfcy" path="res://Sounds/lose_sfx.wav" id="30_felxp"]
+[ext_resource type="AudioStream" uid="uid://dupxvvf7227nr" path="res://Sounds/win_sfx.wav" id="31_u2s42"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vnjsm"]
 
@@ -111,7 +121,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="BackgroundController" type="Control" parent="Canvas/UI" unique_id=989724634 node_paths=PackedStringArray("current_background", "transition_background")]
+[node name="BackgroundController" type="Control" parent="Canvas/UI" unique_id=989724634 node_paths=PackedStringArray("current_background")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,7 +132,7 @@ mouse_filter = 2
 script = ExtResource("1_wcbfl")
 animation_duration = 1.0
 current_background = NodePath("StaticBackground")
-transition_background = NodePath("TransitionBackground")
+background_circle = ExtResource("3_tcpmg")
 
 [node name="StaticBackground" type="ColorRect" parent="Canvas/UI/BackgroundController" unique_id=2135212804]
 layout_mode = 1
@@ -131,18 +141,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -176.0
 offset_bottom = 176.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.9607843, 0.9843137, 1, 1)
-
-[node name="TransitionBackground" type="ColorRect" parent="Canvas/UI/BackgroundController" unique_id=1716848338]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -173.0
-offset_bottom = 173.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -1659,10 +1657,48 @@ script = ExtResource("18_dkwgj")
 undo_controller = NodePath("../UndoController")
 taper = NodePath("../../Canvas/UI/Panels/ColorRect/RightPanel/DisplayPanel/Display")
 
-[node name="UndoController" type="Node2D" parent="Game" unique_id=2034786822 node_paths=PackedStringArray("board_controller", "player")]
+[node name="UndoController" type="Node2D" parent="Game" unique_id=2034786822 node_paths=PackedStringArray("board_controller", "player", "tape")]
 script = ExtResource("19_vkosf")
 board_controller = NodePath("../BoardController")
 player = NodePath("../Player")
+tape = NodePath("../../Canvas/UI/Panels/ColorRect/RightPanel/DisplayPanel/Display")
+
+[node name="Audio" type="Node2D" parent="Game" unique_id=348942591 node_paths=PackedStringArray("plug_wire", "machine_activate", "wire_missing", "state_change", "key_pickup", "move", "lose", "win")]
+script = ExtResource("23_fqw1m")
+plug_wire = NodePath("plug_wire")
+machine_activate = NodePath("machine")
+wire_missing = NodePath("missing")
+state_change = NodePath("state_change")
+key_pickup = NodePath("key_pickup")
+move = NodePath("move")
+lose = NodePath("lose")
+win = NodePath("win")
+
+[node name="plug_wire" type="AudioStreamPlayer2D" parent="Game/Audio" unique_id=828958132]
+stream = ExtResource("24_gjfml")
+
+[node name="machine" type="AudioStreamPlayer2D" parent="Game/Audio" unique_id=1813659064]
+stream = ExtResource("25_4g00q")
+volume_db = -16.701
+pitch_scale = 1.17
+
+[node name="missing" type="AudioStreamPlayer2D" parent="Game/Audio" unique_id=1878146536]
+stream = ExtResource("26_ctwaq")
+
+[node name="state_change" type="AudioStreamPlayer2D" parent="Game/Audio" unique_id=683466611]
+stream = ExtResource("27_x4fcs")
+
+[node name="key_pickup" type="AudioStreamPlayer2D" parent="Game/Audio" unique_id=1453930166]
+stream = ExtResource("28_kcxif")
+
+[node name="move" type="AudioStreamPlayer2D" parent="Game/Audio" unique_id=1984069189]
+stream = ExtResource("29_7543b")
+
+[node name="lose" type="AudioStreamPlayer2D" parent="Game/Audio" unique_id=20530691]
+stream = ExtResource("30_felxp")
+
+[node name="win" type="AudioStreamPlayer2D" parent="Game/Audio" unique_id=116267337]
+stream = ExtResource("31_u2s42")
 
 [node name="Canvas2" type="Control" parent="." unique_id=1477921432]
 z_index = 8

@@ -1,5 +1,8 @@
+
 extends Control
 class_name TapeController
+
+signal tape_advancing
 
 var tape = Array()
 var tapePos = 0
@@ -17,6 +20,7 @@ const ARROW_WIDTH_RATIO = 0.8
 const ARROW_HEIGHT_RATIO = 0.24
 const ARROW_GAP_RATIO = 0.07
 
+
 func _ready() -> void:
 	tape.resize(tLength)
 	for i in range(tLength):
@@ -27,9 +31,33 @@ func _ready() -> void:
 
 	queue_redraw()
 
+
+# UNDO SYSTEM
+
+func get_state() -> Dictionary:
+	return {
+		"tape": tape.duplicate(),
+		"tapePos": tapePos,
+		"global": Global.get_state()
+	}
+
+
+func save_state() -> Dictionary:
+	return get_state()
+
+
+func restore_state(state: Dictionary) -> void:
+	tape = state["tape"].duplicate()
+	tapePos = state["tapePos"]
+
+	Global.restore_state(state["global"])
+
+	queue_redraw()
+
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_RESIZED:
 		queue_redraw()
+
 
 func _draw() -> void:
 	if size.x <= 0 or size.y <= 0:
@@ -81,6 +109,7 @@ func _draw() -> void:
 
 	draw_colored_polygon(arrowPoints, ARROW_COLOR)
 
+
 func GetStateColor(state) -> Color:
 	if state == 2:
 		return Color("#8c0013")
@@ -88,41 +117,43 @@ func GetStateColor(state) -> Color:
 		return Color("#fe5a8f")
 	return Color("#f8e5d7")
 
-func moveTapeLeft() -> void:
 
+func moveTapeLeft() -> void:
 	tapePos -= 1
 	if tapePos < 0:
 		tapePos = tLength - 1
 
 	tape[tapePos] = (tape[tapePos] + 1) % 3
-	
 	queue_redraw()
 
-func moveTapeRight() -> void:
 
+func moveTapeRight() -> void:
 	tapePos += 1
 	if tapePos >= tLength:
 		tapePos = 0
 
 	tape[tapePos] = (tape[tapePos] + 1) % 3
-	
 	queue_redraw()
+
+
 func advance() -> int:
+	Global.audio_player.play_machine_activate()
 	Global.plugs = get_tree().get_nodes_in_group("Plug")
 
 	for p in Global.plugs:
-
 		if p.linkNode != Global.curNode:
 			continue
 
 		if p.state != tape[tapePos]:
 			continue
 
-
 		var dragPlug = p.get_node("DragPlug")
 
 		if not dragPlug.isLocked:
+			send_missing_wire_blink()
 			return -1
+
+		tape_advancing.emit()
 
 		Global.curNode = dragPlug.conNode
 
@@ -130,8 +161,11 @@ func advance() -> int:
 			moveTapeRight()
 		else:
 			moveTapeLeft()
-
-
 		return tape[tapePos]
 
 	return -1
+
+func send_missing_wire_blink():
+	Global.audio_player.play_wire_missing()
+	# Blink for missing wire on activate tape advancement
+	pass
